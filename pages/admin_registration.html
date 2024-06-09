@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="Description" content="Dynamic web development"> 
+    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+    <title> HPMS </title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">HPMS</div>
+            <div class="nav-link">
+                <a href="../index.html">Home</a>
+                <a href="patient_registration.html">Patient Registration</a>
+                <a href="clinical_visit.html">Clinical Visit</a>
+                <a href="art_prescription.html">ART Prescription</a>
+                <a href="contact_tracing.html">Contact Tracing </a>
+                <a href="educational_outreach.html">Education/Outreach</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section-container">
+            
+            <nav class="side-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="patient_registration.html">Patient Registration</a></li>
+                    <a href="clinical_visit.html">Clinical Visit</a>
+                    <a href="art_prescription.html">ART Prescription</a>
+                    <a href="contact_tracing.html">Contact Tracing </a>
+                    <a href="edu_outreach.html">Education/Outreach</a>
+                </ul>
+            </nav>
+
+            <article class="form-container">
+                <h2> Admin Registration Form </h2>
+                <form action="login.html" method="post" autocomplete="off" target="_self">
+                    <div class="form-group">
+                        <label for="firstname">First Name:</label>
+                        <input type="text" id="firstname" name="firstname" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" id="lastname" name="lastname" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailadd">Email Address:</label>
+                        <input type="email" id="emailadd" name="emailadd" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobilenumber">Mobile Number:</label>
+                        <input type="tel" id="mobilenumber" name="mobilenumber" required>
+                    </div class="form-group">
+
+                    <div class="form-group">
+                        <label for="username">User Name:</label>
+                        <input type="email" id="username" name="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="admin-password">Password:</label>
+                        <input type="password" id="admin-password" name="admin-password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="c-password">Confirm Password:</label>
+                        <input type="password" id="c-password" name="c-password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Role:</label>
+                        <select name="role" id="role" required>
+                            <option value="select one" selected>Select One</option>
+                            <option value="admin">Admin</option>
+                            <option value="admin supervisor">Admin supervisor</option>
+                        </select>  
+                    </div>
+
+                    <div class="form-group" >
+                        <label for="Organsation">Organisation:</label>
+                        <input type="text" id="Organsation" name="Organsation" required>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="submit" value="save & exit">Register</button>
+                    </div>
+                </form>
+            </article>
+            
+            
+        </section>
+        <footer class="footer">
+                <p>&copy; 2024 HIV Prevalence Management System</p>
+            </footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="Description" content="Dynamic web development"> 
+    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+    <title> HPMS </title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">HPMS</div>
+            <div class="nav-link">
+                <a href="../index.html">Home</a>
+                <a href="patient_registration.html">Patient Registration</a>
+                <a href="clinical_visit.html">Clinical Visit</a>
+                <a href="art_prescription.html">ART Prescription</a>
+                <a href="contact_tracing.html">Contact Tracing </a>
+                <a href="edu_outreach.html">Education/Outreach</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section-container">
+            <div>
+            <nav class="side-nav">
+                <ul>
+                    <a href="../index.html">Home</a>
+                    <a href="patient_registration.html">Patient Registration</a>
+                    <a href="clinical_visit.html">Clinical Visit</a>
+                    <a href="art_prescription.html">ART Prescription</a>
+                    <a href="contact_tracing.html">Contact Tracing </a>
+                    <a href="edu_outreach.html">Education Outreach</a>
+                </ul>
+            </nav>
+            </div>
+
+            <article class="form-container">
+                <div class="table-container">
+                    <h2> Patient Registration Form </h2>
+                    <form action="clinical_visit.html" method="post" autocomplete="off" target="_self">
+                        <div style="overflow-x: auto;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colspan="10" style="text-align: center;">Personal Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="5" >
+                                        <label for="uniqueid">Patient Unique-Id:</label>
+                                        <input type="text" name="uniqueid" id="uniqueid"> 
+                                    </td>
+                                    <td colspan="5" >
+                                        <label for="date-enrolled"> Date Enrolled:</label> 
+                                        <input type="text" name="date-enrolled" id="date-enrolled"> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <label for="fullname">Full Name:</label> 
+                                        <input type="text" id="fullname" name="fullname" required maxlength="255"> 
+                                    </td>
+                                    <td colspan="4">
+                                        <label for="dob">Date of Birth: </label>
+                                        <input type="date" id="dob" name="dob" required> 
+                                    </td>
+                                    <td colspan="3"> 
+                                        <label for="gender">Gender:</label> 
+                                        <select id="gender" name="gender" required>
+                                            <option value="select one" selected>Select One</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <label for="marital-status"> Marital Status:</label> 
+                                        <select id="marital-status" name="marital-status" required>
+                                            <option value="select one" selected>Select One</option>
+                                            <option value="Single">Single</option>
+                                            <option value="Married">Married</option>
+                                            <option value="Divorced">Divorced</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </td>
+                                    <td colspan="4">
+                                        <label for="address">Address:</label> 
+                                        <input type="text" id="address" name="address" required>
+                                    </td>
+                                    <td colspan="3">
+                                        <label for="phone-no">Phone Number:</label> 
+                                        <input type="number" id="phone-no" name="phone-no" required>
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <label for="email">Email Address:</label> 
+                                        <input type="email" id="email" name="mail" required>
+                                    </td>
+                                    <td colspan="5">
+                                        <label for="nationality">Nationality:</label> 
+                                        <input type="text" id="nationality" name="nationality">
+                                    </td>
+                                </tr>
+                                <tr>    
+                                    <td colspan="5">
+                                        <label for="Resisdence">State of Resisdence:</label> 
+                                        <input type="text" id="Resisdence" name="Resisdence">
+                                    </td>
+                                    <td colspan="5">
+                                        <label for="emergencyContact">Emergency Contact Information:</label> 
+                                        <input type="text" id="emergencyContact" name="emergencyContact">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <label for="nok">Next of Kin(NOK):</label>
+                                        <input type="number" id="nok" name="nok" required>
+                                    </td>
+                                    <td colspan="5">
+                                        <label for="contact-nok">Phone Number(NOK):</label> 
+                                        <input type="number" id="contact-nok" name="contact-nok" required>
+                                    </td>
+                                        
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <label for=""> Mother Unique-Id <i>(if infant):</i></label>
+                                        <input type="number" id="mother-uniueid" name="mother-uniueid" required>
+                                    </td>                                        
+                                    <td colspan="4">
+                                        <label for="care-entry">Care Entry Point:</label>
+                                        <input type="checkbox" id="opd" name="care-entry" class="checkbox" required>
+                                        <label for="opd">OPD</label>
+                                        <input type="checkbox" id="in-patient" name="care-entry"  class="checkbox"required>
+                                        <label for="in-patient">In-Patients</label>
+                                        <input type="checkbox" id="hts" name="care-entry" class="checkbox" required>
+                                        <label for="hts">HTS</label>
+                                        <input type="checkbox" id="tb-dots" name="care-entry"  class="checkbox"required>
+                                        <label for="tb-dots">TB DOTS</label>
+                                        <input type="checkbox" id="sti-clinic" name="care-entry"  class="checkbox" required>
+                                        <label for="sti-clinic">STI Clinic</label>
+                                        <input type="checkbox" id="anc-pmtct" name="care-entry" class="checkbox" required>
+                                        <label for="anc-pmtct" >ANC/PMTCT</label>
+                                        <input type="checkbox" id="transfer-in" name="care-entry" required class="checkbox">
+                                        <label for="transfer-in" >Transfer-in</label>
+                                    </td>
+                                    <td colspan="4">
+                                        <label for="hiv-status" >HIV Status:</label>
+                                        <input type="checkbox" id="hivStatus-pos" name="hiv-status" class="checkbox" required >
+                                        <label for="hiv-status-pos" >Positive</label>
+                                        <input type="checkbox" id="hiv-status-neg" name="hiv-status" required  class="checkbox">
+                                        <label for="hiv-status-neg">Negative</label>
+                                        <input type="checkbox" id="hiv-status-unk" name="hiv-status" required  class="checkbox">
+                                        <label for="hiv-status-unk"> Unknown </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <label for="">Confirmed HIV date:</label> 
+                                        <input type="date" name="hiv-date" id="hiv-date">
+                                    </td>
+                                    
+                                    <td colspan="5">
+                                        <label for="hiv-testmode">HIV Test Mode: </label>
+                                        <input type="checkbox" id="hiv-testmode-HIVab" name="hiv-testmode" required class="checkbox">
+                                        <label for="hiv-testmode-HIVab" >HIV-ab</label>
+                                        <input type="checkbox" id="hiv-testmode-pcr" name="hiv-testmode" required class="checkbox">
+                                        <label for="hiv-testmode-pcr" >PCR</label>
+                                    </td>
+                                    <td colspan="3">
+                                        <label for="test-location">Test Location: </label> 
+                                        <input type="text" id="test-location" name="test-location">
+                                    </td> 
+
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <label for="prior-art">prior ART: </label>
+                                        <input type="checkbox" id="artWith-record" name="prior-art" class="checkbox">
+                                        <label for="artWith-record" >Transfer in with record</label>
+                                        <input type="checkbox" id="artWithout-record" name="prior-art" class="checkbox">
+                                        <label for="artWithout-record" >transfer-in without records </label>
+                                        <input type="checkbox" id="art-pmtct" name="prior-art" class="checkbox">
+                                        <label for="art-pmtct" >PMTCT Only</label>
+                                        <input type="checkbox" id="art-pep" name="prior-art" class="checkbox">
+                                        <label for="art-pep" >PEP</label>
+                                    </td>
+                                    <td colspan="3"> 
+                                        <label for="priorArt-date">Transfer-in Date: </label>
+                                        <input type="date" id="priorArt-date" name="priorArt-date">
+                                    </td>
+                                    <td colspan="3">
+                                        <label for="prior-facility">Facility Transfer From:</label> 
+                                        <input type="text" name="prior-facility" id="prior-facility"></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                        </div>                         
+                    </form>
+
+                    <div class="button-container">
+                        <button type="submit"><a href="clinical_visit.html" >Save & Submit</a></button>
+                        <button><a href="patient_registration.html">Next Patient</a></button>
+                    </div>
+                    
+                </div>
+
+            </article>
+
+
+        </section>
+        <footer class="footer">
+            <p>&copy; 2024 HIV Prevalence Management System</p>
+        </footer>
+
+
+    </main>
+</body>
+</html>

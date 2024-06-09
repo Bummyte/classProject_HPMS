@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="Description" content="Dynamic web development"> 
+    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+    <title> HPMS </title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">HPMS</div>
+            <div class="nav-link">
+                <a href="../index.html">Home</a>
+                <a href="patient_registration.html">Patient Registration</a>
+                <a href="clinical_visit.html">Clinical Visit</a>
+                <a href="art_prescription.html">ART Prescription</a>
+                <a href="contact_tracing.html">Contact Tracing </a>
+                <a href="edu_outreach.html">Education Outreach</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-section" >
+            <h2>Login</h2>
+            <div class="form-container">
+                <p><i>Kindly login here as a user</i></I></p>
+                <form action="patient_registration.html" method="post" autocomplete="off" target="_self">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="submit" id="button"  value="Submit" class="button">                         
+                    </div>
+                    <p>not registered yet? <a href="admin_registration.html">Click here to register</a></p>
+                </form>
+            </div>
+        </section>
+        <footer class="footer">
+            <p>&copy; 2024 HIV Prevalence Management System</p>
+        </footer>
+
+
+    </main>
+</body>
+</html>

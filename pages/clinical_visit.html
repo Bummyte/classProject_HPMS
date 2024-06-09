@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="Description" content="Dynamic web development"> 
+    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+    <title> HPMS </title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">HPMS</div>
+            <div class="nav-link">
+                <a href="../index.html">Home</a>
+                <a href="patient_registration.html">Patient Registration</a>
+                <a href="clinical_visit.html">Clinical Visit</a>
+                <a href="art_prescription.html">ART Prescription</a>
+                <a href="contact_tracing.html">Contact Tracing </a>
+                <a href="edu_outreach.html">Education Outreach</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section-container">
+            <div>
+            <nav class="side-nav">
+                <ul>
+                    <a href="../index.html">Home</a>
+                    <a href="patient_registration.html">Patient Registration</a>
+                    <a href="clinical_visit.html">Clinical Visit</a>
+                    <a href="art_prescription.html">ART Prescription</a>
+                    <a href="contact_tracing.html">Contact Tracing </a>
+                    <a href="educational_outreach.html">Education/Outreach</a>
+                </ul>
+            </nav>
+            </div>
+
+            <article class="form-container">
+                <div class="table-container">
+                    <h2>Clinical Visit Form</h2>
+                    <form action="clinical_visit.html" method="post" autocomplete="off" target="_self" class="input-container">
+                        <div style="overflow-x: auto;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colspan="10">Medical History</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="5">
+                                        <label for="patient_id">Patient ID:</label>
+                                        <input type="text" id="patient_id" name="patient_id" required>
+                                    </td>
+                                    <td colspan="5">
+                                        <label for="previous_tests">Previous HIV Tests (dates and results):</label>
+                                        <textarea id="previous_tests" name="previous_tests"></textarea>  
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">
+                                        <label for="opportunistic_infections">History of Opportunistic Infections:</label>
+                                        <textarea id="opportunistic_infections" name="opportunistic_infections"></textarea>
+                                    </td>
+                                    <td colspan="4">
+                                        <label for="hiv_related_conditions">History of HIV-related Conditions:</label>
+                                        <textarea id="hiv_related_conditions" name="hiv_related_conditions" rows="3"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <label for="previous_medications">Previous and Current Medications:</label>
+                                        <textarea id="previous_medications" name="previous_medications" rows="3"></textarea>
+                                        </td>
+                                    <td colspan="5">
+                                        <label for="allergies">Allergies:</label>
+                                        <textarea id="allergies" name="allergies" rows="3"></textarea>
+                                    </td>                                     
+                                </tr>
+                                
+                                <tr>
+                                    <th colspan="10">Current Visit Details</th>
+                                </tr> 
+                                <tr>
+                                    <td colspan="4">
+                                        <label for="visit_date">Date of Visit:</label>
+                                        <input type="date" id="visit_date" name="visit_date" required>
+                                    </td>
+                                    <td colspan="3">
+                                        <label for="reason_for_visit">Reason for Visit:</label>
+                                        <textarea id="reason_for_visit" name="reason_for_visit" rows="3" required></textarea>
+                                    </td>
+                                    <td class="3">
+                                        <label for="current_symptoms">Current Symptoms:</label>
+                                        <textarea id="current_symptoms" name="current_symptoms" rows="3"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <label for="vital_signs_blood_pressure">Blood Pressure:</label>
+                                        <input type="text" id="vital_signs_blood_pressure" name="vital_signs_blood_pressure">
+                                    </td>
+                                    <td colspan="4">
+                                        <label for="vital_signs_heart_rate">Heart Rate:</label>
+                                        <input type="text" id="vital_signs_heart_rate" name="vital_signs_heart_rate">
+                                    </td>
+                                    <td colspan="3">
+                                        <label for="vital_signs_temperature">Temperature:</label>
+                                        <input type="text" id="vital_signs_temperature" name="vital_signs_temperature">
+                                    </td>                                    
+                                </tr>
+                                <tr>
+                                    <td colspan="6">
+                                        <label for="vital_signs_weight">Weight:</label>
+                                        <input type="text" id="vital_signs_weight" name="vital_signs_weight">
+                                    </td>
+                                    <td colspan="4">
+                                        <label for="vital_signs_height">Height:</label>
+                                        <input type="text" id="vital_signs_height" name="vital_signs_height">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th colspan="10">HIV-Specific Data</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <label for="hiv_diagnosis_date">Date of HIV Diagnosis:</label>
+                                        <input type="date" id="hiv_diagnosis_date" name="hiv_diagnosis_date" required>
+                                    </td>
+                                    <td colspan="5">
+                                        <label for="hiv-testmode">HIV Test Mode:</label>
+                                        <input type="checkbox" id="hiv-testmode-HIVab" name="hiv-testmode" required>
+                                        <label for="hiv-testmode-HIVab">HIV-ab</label>
+                                        <input type="checkbox" id="hiv-testmode-pcr" name="hiv-testmode" required>
+                                        <label for="hiv-testmode-pcr">PCR</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <label for="viral_load">Viral Load (copies/mL):</label>
+                                        <input type="number" id="viral_load" name="viral_load">
+                                    </td>
+                                    <td colspan="3">
+                                        <label for="cd4_count">CD4 Count (cells/mm³):</label>
+                                        <input type="number" id="cd4_count" name="cd4_count">
+                                    </td>
+                                    <td colspan="3">
+                                        <label for="resistance_testing_results">Resistance Testing Results:</label>
+                                        <textarea id="resistance_testing_results" name="resistance_testing_results" rows="3"></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </form>
+                    <div class="button-container">
+                        <button type="submit" name="submit"><a href="art_prescription.html">Submit</a>  </button>
+                    </div>
+                    
+                </div>
+            </article>
+        </section>
+        <footer class="footer">
+            <p>&copy; 2024 HIV Prevalence Management System</p>
+        </footer>
+
+    </main>
+</body>
+</html>                    

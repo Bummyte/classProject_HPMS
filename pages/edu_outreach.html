@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="Description" content="Dynamic web development"> 
+    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+    <title> HPMS </title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">HPMS</div>
+            <div class="nav-link">
+                <a href="../index.html">Home</a>
+                <a href="patient_registration.html">Patient Registration</a>
+                <a href="clinical_visit.html">Clinical Visit</a>
+                <a href="art_prescription.html">ART Prescription</a>
+                <a href="contact_tracing.html">Contact Tracing </a>
+                <a href="educational_outreach.html">Education/Outreach</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="section-container">
+            <div>
+            <nav class="side-nav">
+                <ul>
+                    <a href="../index.html">Home</a>
+                    <a href="patient_registration.html">Patient Registration</a>
+                    <a href="clinical_visit.html">Clinical Visit</a>
+                    <a href="art_prescription.html">ART Prescription</a>
+                    <a href="contact_tracing.html">Contact Tracing </a>
+                    <a href="edu_outreach.html"> Education Outreach </a>
+                </ul>
+            </nav>
+            </div>
+
+            <article class="form-container" >
+                <section style="background-color: rgb(185, 200, 205);">
+                <h2> Educational Outreach </h2>
+                <form id="#" method="post" autocomplete="off" target="_self">
+                    <div class="form-group">
+                    <div>
+                        <label for="eventDate">Event Date:</label>
+                        <input type="date" id="eventDate" name="eventDate" required>
+                    </div>
+
+                    <div>
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" name="location">
+                    </div>
+                    
+                    <div>
+                        <label for="targetAudience">Target Audience:</label>
+                        <input type="text" id="targetAudience" name="targetAudience">
+                    </div>
+                    
+                    <div>
+                        <label for="numberOfAttendees">Number of Attendees:</label>
+                        <input type="number" id="numberOfAttendees" name="numberOfAttendees">
+                    </div>
+
+                    <div>
+                        <label for="topicsCovered">Topics Covered:</label>
+                        <textarea id="topicsCovered" name="topicsCovered"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label for="feedback">Feedback:</label>
+                        <textarea id="feedback" name="feedback"></textarea>
+                    </div>
+                    
+                    </div>
+                     
+                </form>
+                <div class="button-container">
+                    <button type="submit" value="Save & Next"> <a href="edu_outreach.html">Save & Next Event</a></button>
+                    <button type="submit" name="submit">Submit</button>
+                </div>
+                </section>
+
+            </article>
+        </section>
+        <footer class="footer">
+            <p>&copy; 2024 HIV Prevalence Management System</p>
+        </footer>
+
+    </main>
+</body>
+</html>

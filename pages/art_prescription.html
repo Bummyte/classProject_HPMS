@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="Description" content="Dynamic web development"> 
+    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+    <title> HPMS </title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">HPMS</div>
+            <div class="nav-link">
+                <a href="../index.html">Home</a>
+                <a href="patient_registration.html">Patient Registration</a>
+                <a href="clinical_visit.html">Clinical Visit</a>
+                <a href="art_prescription.html">ART Prescription</a>
+                <a href="contact_tracing.html">Contact Tracing </a>
+                <a href="edu_outreach.html">Education Outreach</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section-container">
+            <div>
+            <nav class="side-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="patient_registration.html">Patient Registration</a></li>
+                    <a href="clinical_visit.html">Clinical Visit</a>
+                    <a href="art_prescription.html">ART Prescription</a>
+                    <a href="contact_tracing.html">Contact Tracing </a>
+                    <a href="educational_outreach.html">Education/Outreach</a>
+                </ul>
+            </nav>
+            </div>
+
+            <article class="form-container">
+                <div class="table-container">
+                    <h2>Antiretroviral Therapy(ART) For Patient </h2>
+                    <form action="#" method="post" autocomplete="off" target="_self" >
+                        <div style="overflow-x: auto;">
+                            <table>
+                                <thead>                        
+                                    <tr>
+                                        <th colspan="10">Treatment Information</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td colspan="5">
+                                        <label for="patient_id">Patient ID:</label>
+                                        <input type="text" id="patient_id" name="patient_id" required>
+                                    </td>
+                                    <td colspan="5">
+                                        <label for="prescription_date">Prescription Date:</label>
+                                        <input type="date" id="prescription_date" name="prescription_date" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <label for="current_art_regimen">Current ART Regimen:</label>
+                                        <textarea id="current_art_regimen" name="current_art_regimen" rows="3" required></textarea>
+                                    </td>
+                                    <td colspan="4">
+                                        <label for="dosage">Dosage:</label>
+                                        <input type="text" id="dosage" name="dosage" required>
+                                    </td>
+                                    <td colspan="3">
+                                        <label for="frequency">Frequency:</label>
+                                        <input type="text" id="frequency" name="frequency" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <label for="start_date">ART Start Date:</label>
+                                        <input type="date" id="start_date" name="start_date" required>
+                                    </td>
+                                    <td colspan="3">
+                                        <label for="duration">Duration (e.g., 30 days):</label>
+                                        <input type="text" id="duration" name="duration" required>
+                                    </td>
+                                    <td colspan="3">
+                                        <label for="refills">Number of Refills:</label>
+                                        <input type="number" id="refills" name="refills" min="0" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <label for="adherence">Adherence to Treatment:</label>
+                                        <select id="adherence" name="adherence" required>
+                                            <option value="excellent">Excellent</option>
+                                            <option value="good">Good</option>
+                                            <option value="fair">Fair</option>
+                                            <option value="poor">Poor</option>
+                                        </select>
+                                    </td>
+                                    <td colspan="3">
+                                        <label for="side_effects">ART Side Effects:</label>
+                                        <textarea id="side_effects" name="side_effects" rows="3"></textarea>
+                                    </td>
+                                    <td colspan="3"> 
+                                        <label for="drug_interactions">Drug Interactions:</label>
+                                        <textarea id="drug_interactions" name="drug_interactions" rows="3"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">
+                                        <label for="previous_art_regimen">Previous ART Regimens:</label>
+                                        <textarea id="previous_art_regimen" name="previous_art_regimen" rows="3"></textarea>
+                                    </td>
+                                    <td colspan="4">
+                                        <label for="reason_for_change">Reason for Change in Regimen (if applicable):</label>
+                                        <textarea id="reason_for_change" name="reason_for_change" rows="3"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <label for="other_medications">Other Medications:</label>
+                                        <input type="text"  id="other_medications" name="other_medications">
+                                    </td>
+                                    <td colspan="5">
+                                        <label for="treatment_notes">Additional Treatment Notes:</label>
+                                        <textarea id="treatment_notes" name="treatment_notes" rows="3"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th colspan="10">Follow-Up and Monitoring</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">
+                                        <label for="follow_up_date">Next Follow-Up Date:</label>
+                                        <input type="date" id="follow_up_date" name="follow_up_date" required>
+                                    </td>
+                                    <td colspan="4">
+                                        <label for="monitoring_plan">Monitoring Plan:</label>
+                                        <textarea id="monitoring_plan" name="monitoring_plan" rows="3" required></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th colspan="10">Prescriber Information</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <label for="prescriber_name">Prescriber Name:</label>
+                                        <input type="text" id="prescriber_name" name="prescriber_name" required>
+                                    </td>
+                                    <td colspan="3">
+                                        <label for="prescriber_contact">Prescriber Contact Information:</label>
+                                        <textarea id="prescriber_contact" name="prescriber_contact" rows="2" required></textarea>
+                                    </td>
+                                    <td colspan="3">
+                                        <label for="prescriber_license">Prescriber License Number:</label>
+                                        <input type="text" id="prescriber_license" name="prescriber_license" required>
+                                    </td>
+                                </tr>
+                            </table>       
+                        </div>
+
+                    </form>
+
+                    <div class="button-container">
+                        <button type="submit" name="submit">Submit</button>
+                    </div>
+                </div>
+                
+            </article>
+            
+           
+        </section>
+        <footer class="footer">
+            <p>&copy; 2024 HIV Prevalence Management System</p>
+        </footer>
+
+    </main>
+</body>
+</html>
