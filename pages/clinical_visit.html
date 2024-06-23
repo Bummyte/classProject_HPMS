@@ -1,172 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <meta name="Description" content="Dynamic web development"> 
-    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
-    <title> HPMS </title>
+    <meta name="description" content="Dynamic web development"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HPMS</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">HPMS</div>
-            <div class="nav-link">
-                <a href="../index.html">Home</a>
-                <a href="patient_registration.html">Patient Registration</a>
-                <a href="clinical_visit.html">Clinical Visit</a>
-                <a href="art_prescription.html">ART Prescription</a>
-                <a href="contact_tracing.html">Contact Tracing </a>
-                <a href="edu_outreach.html">Education Outreach</a>
-            </div>
+        <div class="logo">HPMS</div>
+        <nav class="nav-link">
+            <a href="../index.html">Home</a>
+            <a href="patient_registration.html">Patient Registration</a>
+            <a href="clinical_visit.html">Clinical Visit</a>
+            <a href="art_prescription.html">ART Prescription</a>
+            <a href="contact_tracing.html">Contact Tracing</a>
+            <a href="edu_outreach.html">Education Outreach</a>
+            <a style="float: left;" href="clinical_visit.html">Register New Patient</a>
         </nav>
     </header>
 
     <main>
         <section class="section-container">
             <div>
-            <nav class="side-nav">
-                <ul>
-                    <a href="../index.html">Home</a>
-                    <a href="patient_registration.html">Patient Registration</a>
-                    <a href="clinical_visit.html">Clinical Visit</a>
-                    <a href="art_prescription.html">ART Prescription</a>
-                    <a href="contact_tracing.html">Contact Tracing </a>
-                    <a href="educational_outreach.html">Education/Outreach</a>
-                </ul>
-            </nav>
+                <nav class="side-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="patient_registration.html">Patient Registration</a></li>
+                        <li><a href="clinical_visit.html">Clinical Visit</a></li>
+                        <li><a href="art_prescription.html">ART Prescription</a></li>
+                        <li><a href="contact_tracing.html">Contact Tracing</a></li>
+                        <li><a href="edu_outreach.html">Education/Outreach</a></li>
+                    </ul>
+                </nav>
             </div>
 
             <article class="form-container">
                 <div class="table-container">
                     <h2>Clinical Visit Form</h2>
-                    <form action="clinical_visit.html" method="post" autocomplete="off" target="_self" class="input-container">
-                        <div style="overflow-x: auto;">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th colspan="10">Medical History</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td colspan="5">
-                                        <label for="patient_id">Patient ID:</label>
-                                        <input type="text" id="patient_id" name="patient_id" required>
-                                    </td>
-                                    <td colspan="5">
-                                        <label for="previous_tests">Previous HIV Tests (dates and results):</label>
-                                        <textarea id="previous_tests" name="previous_tests"></textarea>  
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6">
-                                        <label for="opportunistic_infections">History of Opportunistic Infections:</label>
-                                        <textarea id="opportunistic_infections" name="opportunistic_infections"></textarea>
-                                    </td>
-                                    <td colspan="4">
-                                        <label for="hiv_related_conditions">History of HIV-related Conditions:</label>
-                                        <textarea id="hiv_related_conditions" name="hiv_related_conditions" rows="3"></textarea>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="5">
-                                        <label for="previous_medications">Previous and Current Medications:</label>
-                                        <textarea id="previous_medications" name="previous_medications" rows="3"></textarea>
+                    <form id="clinicForm" action="art_prescription.html" method="post" autocomplete="off" target="_self" onsubmit="return validateClinicVisit();">
+                        <div class="divstyle">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th colspan="10">Medical History</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="5">
+                                            <label for="patientId">Patient ID:</label>
+                                            <input type="text" id="patientId" name="patientId" oninput="clearError('patientId', 'patientIdErr')"><br>
+                                            <span id="patientIdErr"></span>                                            
                                         </td>
-                                    <td colspan="5">
-                                        <label for="allergies">Allergies:</label>
-                                        <textarea id="allergies" name="allergies" rows="3"></textarea>
-                                    </td>                                     
-                                </tr>
-                                
-                                <tr>
-                                    <th colspan="10">Current Visit Details</th>
-                                </tr> 
-                                <tr>
-                                    <td colspan="4">
-                                        <label for="visit_date">Date of Visit:</label>
-                                        <input type="date" id="visit_date" name="visit_date" required>
-                                    </td>
-                                    <td colspan="3">
-                                        <label for="reason_for_visit">Reason for Visit:</label>
-                                        <textarea id="reason_for_visit" name="reason_for_visit" rows="3" required></textarea>
-                                    </td>
-                                    <td class="3">
-                                        <label for="current_symptoms">Current Symptoms:</label>
-                                        <textarea id="current_symptoms" name="current_symptoms" rows="3"></textarea>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">
-                                        <label for="vital_signs_blood_pressure">Blood Pressure:</label>
-                                        <input type="text" id="vital_signs_blood_pressure" name="vital_signs_blood_pressure">
-                                    </td>
-                                    <td colspan="4">
-                                        <label for="vital_signs_heart_rate">Heart Rate:</label>
-                                        <input type="text" id="vital_signs_heart_rate" name="vital_signs_heart_rate">
-                                    </td>
-                                    <td colspan="3">
-                                        <label for="vital_signs_temperature">Temperature:</label>
-                                        <input type="text" id="vital_signs_temperature" name="vital_signs_temperature">
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td colspan="6">
-                                        <label for="vital_signs_weight">Weight:</label>
-                                        <input type="text" id="vital_signs_weight" name="vital_signs_weight">
-                                    </td>
-                                    <td colspan="4">
-                                        <label for="vital_signs_height">Height:</label>
-                                        <input type="text" id="vital_signs_height" name="vital_signs_height">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th colspan="10">HIV-Specific Data</th>
-                                </tr>
-                                <tr>
-                                    <td colspan="5">
-                                        <label for="hiv_diagnosis_date">Date of HIV Diagnosis:</label>
-                                        <input type="date" id="hiv_diagnosis_date" name="hiv_diagnosis_date" required>
-                                    </td>
-                                    <td colspan="5">
-                                        <label for="hiv-testmode">HIV Test Mode:</label>
-                                        <input type="checkbox" id="hiv-testmode-HIVab" name="hiv-testmode" required>
-                                        <label for="hiv-testmode-HIVab">HIV-ab</label>
-                                        <input type="checkbox" id="hiv-testmode-pcr" name="hiv-testmode" required>
-                                        <label for="hiv-testmode-pcr">PCR</label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4">
-                                        <label for="viral_load">Viral Load (copies/mL):</label>
-                                        <input type="number" id="viral_load" name="viral_load">
-                                    </td>
-                                    <td colspan="3">
-                                        <label for="cd4_count">CD4 Count (cells/mm³):</label>
-                                        <input type="number" id="cd4_count" name="cd4_count">
-                                    </td>
-                                    <td colspan="3">
-                                        <label for="resistance_testing_results">Resistance Testing Results:</label>
-                                        <textarea id="resistance_testing_results" name="resistance_testing_results" rows="3"></textarea>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                        <td colspan="5">
+                                            <label for="previousTests">Previous HIV Tests (dates and results):</label>
+                                            <textarea id="previousTests" name="previousTests" rows="3" oninput="clearError('previousTests', 'ptestErr')"></textarea><br>
+                                            <span id="ptestErr"></span> 
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <label for="opportunisticInfections">History of Opportunistic Infections:</label>
+                                            <textarea id="opportunisticInfections" name="opportunisticInfections" oninput="clearError('opportunisticInfections', 'OpportunisticErr')"></textarea><br>
+                                            <span id="OpportunisticErr"></span>
+                                        </td>
+                                        <td colspan="4">
+                                            <label for="hivRelatedConditions">History of HIV-related Conditions:</label>
+                                            <textarea id="hivRelatedConditions" name="hivRelatedConditions" rows="3" oninput="clearError('hivRelatedConditions', 'relatedcondErr')"></textarea><br>
+                                            <span id="relatedcondErr"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">
+                                            <label for="previousMedications">Previous and Current Medications:</label>
+                                            <textarea id="previousMedications" name="previousMedications" rows="3" oninput="clearError('previousMedications', 'previousMedicationsErr')"></textarea><br>
+                                            <span id="previousMedicationsErr"></span>
+                                        </td>
+                                        <td colspan="5">
+                                            <label for="allergies">Allergies:</label>
+                                            <textarea id="allergies" name="allergies" rows="3" oninput="clearError('allergies', 'allergiesErr')"></textarea><br>
+                                            <span id="allergiesErr"></span>
+                                        </td>                                       
+                                    </tr>    
+                                                                         
+                                    <tr>
+                                        <th colspan="10">Current Visit Details</th>
+                                    </tr> 
+                                    <tr>
+                                        <td colspan="4">
+                                        <label for="visitDate">Date of Visit:</label>
+                                        <input type="date" id="visitDate" name="visitDate"  oninput="clearError('visitDate', 'visitDateErr')"><br>
+                                        <span id="visitDateErr"></span>
+                                        </td>
+                                        <td colspan="3">
+                                        <label for="reasonForvisit">Reason for Visit:</label>
+                                        <textarea id="reasonForvisit" name="reasonForvisit" rows="3"  oninput="clearError('reasonForvisit', 'reasonForvisitErr')"></textarea><br>
+                                        <span id="reasonForvisitErr"></span>
+                                        </td>
+                                        <td colspan="3">
+                                        <label for="currentSymptoms">Current Symptoms:</label>
+                                        <textarea id="currentSymptoms" name="currentSymptoms" rows="3" oninput="clearError('currentSymptoms', 'currentSymptomsErr')"></textarea><br>
+                                        <span id="currentSymptomsErr"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                        <label for="bloodPressure">Blood Pressure:</label>
+                                        <input type="text" id="bloodPressure" name="bloodPressure" oninput="clearError('bloodPressure', 'bloodPressureErr')"><br>
+                                        <span id="bloodPressureErr"></span>
+                                        </td>
+                                        <td colspan="4">
+                                        <label for="heartRate">Heart Rate:</label>
+                                        <input type="text" id="heartRate" name="heartRate" oninput="clearError('heartRate', 'heartRateErr')"><br>
+                                        <span id="heartRateErr"></span>
+                                        </td>
+                                        <td colspan="3">
+                                        <label for="temperature">Temperature:</label>
+                                        <input type="text" id="temperature" name="temperature" oninput="clearError('temperature', 'temptErr')"><br>
+                                        <span id="temptErr"></span>
+                                        </td>                                    
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                        <label for="weight">Weight:</label>
+                                        <input type="text" id="weight" name="weight" oninput="clearError('weight', 'weightErr')"><br>
+                                        <span id="weightErr"></span>
+                                        </td>
+                                        <td colspan="4">
+                                        <label for="height">Height:</label>
+                                        <input type="text" id="height" name="height" oninput="clearError('height', 'heightErr')"><br>
+                                        <span id="heightErr"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="10">HIV-Specific Data</th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">
+                                        <label for="hivDiagnosisDate">Date of HIV Diagnosis:</label>
+                                        <input type="date" id="hivDiagnosisDate" name="hivDiagnosisDate"  oninput="clearError('hivDiagnosisDate', 'hivDiagnosisDateErr')"><br>
+                                        <span id="hivDiagnosisDateErr"></span>
+                                        </td>
+                                        <td colspan="5">
+                                        <p>HIV Test Mode:</p>
+                                        <input type="checkbox" id="hivTestmodeHIVab" name="hiv_testmode" value="HIV-ab" >
+                                        <label for="hivTestmodeHIVab">HIV-ab</label>
+                                        <input type="checkbox" id="hivTestmodePcr" name="hiv_testmode" value="PCR" >
+                                        <label for="hivTestmodePcr">PCR</label><br>                                            
+                                        <span id="testmodeErr"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                        <label for="viralLoad">Viral Load (copies/mL):</label>
+                                        <input type="number" id="viralLoad" name="viralLoad" oninput="clearError('viralLoad', 'viralLoadErr')"><br>
+                                        <span id="viralLoadErr"></span>
+                                        </td>
+                                        <td colspan="3">
+                                        <label for="cd4Count">CD4 Count (cells/mm³):</label>
+                                        <input type="number" id="cd4Count" name="cd4Count" oninput="clearError('cd4Count', 'cd4CountErr')"><br>
+                                        <span id="cd4CountErr"></span>
+                                        </td>
+                                        <td colspan="3">
+                                        <label for="resistance">Resistance Testing Results:</label>
+                                        <textarea id="resistance" name="resistance" rows="3" oninput="clearError('resistance', 'resistancetestErr')"></textarea><br>
+                                        <span id="resistancetestErr"></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="button-container">
+                                <button type="submit">Submit</button>
+                                <button type="button" value="Save"><a href="clinical_visit.html">Save & Next Patient</a></button>
+                            </div>
                         </div>
                     </form>
-                    <div class="button-container">
-                        <button type="submit" name="submit"><a href="art_prescription.html">Submit</a>  </button>
-                    </div>
-                    
                 </div>
-            </article>
+            </article> 
         </section>
         <footer class="footer">
             <p>&copy; 2024 HIV Prevalence Management System</p>
         </footer>
-
     </main>
+
+    <script>
+        function validateClinicVisit() {
+            var isValid = true;
+
+            // Validate Patient ID
+            const patientId = document.getElementById('patientId').value;
+            if (patientId.trim() === "") {
+                document.getElementById("patientIdErr").textContent = "Please enter Patient ID";
+                document.getElementById('patientId').focus();
+                isValid = false;
+            } else {
+                document.getElementById("patientIdErr").textContent = "";
+            }
+
+            // Validate previousTests
+            const previousTests = document.getElementById('previousTests').value;
+            if (previousTests.trim() === "") {
+                document.getElementById("ptestErr").textContent = "Please enter Previuos Tests";
+                document.getElementById('previousTests').focus();
+                isValid = false;
+            } else {
+                document.getElementById("ptestErr").textContent = "";
+            }
+
+            // Validate History of Opportunistic Infections
+            const opportunisticInfections = document.getElementById('opportunisticInfections').value;
+            if (opportunisticInfections.trim() === "") {
+                document.getElementById('OpportunisticErr').innerText = "History of Opportunistic Infections is ";
+                document.getElementById('opportunisticInfections').focus();
+                isValid = false;
+            } else {
+                document.getElementById("OpportunisticErr").textContent = "";
+            }
+
+            // Validate History of HIV-related Conditions
+            const hivRelatedConditions = document.getElementById('hivRelatedConditions').value;
+            if (hivRelatedConditions.trim() === "") {
+                document.getElementById('relatedcondErr').innerText = "History of HIV-related Conditions is ";
+                document.getElementById('hivRelatedConditions').focus();
+                isValid = false;
+            } else {
+                document.getElementById("relatedcondErr").textContent = "";
+            }
+
+            // Validate Medications
+            const previousMedications = document.getElementById("previousMedications").value;
+            if (previousMedications.trim() === "") {
+                document.getElementById("previousMedicationsErr").textContent = "Please enter previous and current medications";
+                document.getElementById('previousMedications').focus();
+                isValid = false;
+            } else {
+                document.getElementById("previousMedicationsErr").textContent = "";
+            }
+
+            // Validate allergies
+            const allergies = document.getElementById("allergies").value;
+            if (allergies.trim() === "") {
+                document.getElementById("allergiesErr").textContent = "Please enter allergies";
+                isValid = false;
+            } else {
+                document.getElementById("allergiesErr").textContent = "";
+            }
+            // Validate visitDate
+            const visitDate = document.getElementById("visitDate").value;
+            if (visitDate === "") {
+                document.getElementById("visitDateErr").textContent = "Please select a visit date";
+                isValid = false;
+            } else {
+                document.getElementById("visitDateErr").textContent = "";                    
+            }
+                            
+            // Validate reasonForvisit
+            const reasonForvisit = document.getElementById("reasonForvisit").value;
+            if (reasonForvisit.trim() === "") {
+                document.getElementById("reasonForvisitErr").textContent = "Please enter the reason for visit";
+                isValid = false;
+            } else {
+                document.getElementById("reasonForvisitErr").textContent = "";
+            }
+
+                            // Validate Current Symptoms
+                            const currentSymptoms = document.getElementById("currentSymptoms").value;
+                            if (currentSymptoms.trim() === "") {
+                                document.getElementById("currentSymptomsErr").textContent = "Please enter current symptoms";
+                                isValid = false;
+                            } else {
+                                document.getElementById("currentSymptomsErr").textContent = "";
+                            }
+
+                            // Validate Blood Pressure
+                            const bloodPressure = document.getElementById("bloodPressure").value;
+                            if (bloodPressure.trim() === "") {
+                                document.getElementById("bloodPressureErr").textContent = "Please enter blood pressure";
+                                isValid = false;
+                            } else {
+                                document.getElementById("bloodPressureErr").textContent = "";
+                            }
+
+                            // Validate Heart Rate
+                            const heartRate = document.getElementById("heartRate").value;
+                            if (heartRate.trim() === "") {
+                                document.getElementById("heartRateErr").textContent = "Please enter heart rate";
+                                isValid = false;
+                            } else {
+                                document.getElementById("heartRateErr").textContent = "";
+                            }
+
+                            // Validate temperature
+                            const temperature = document.getElementById("temperature").value;
+                            if (temperature.trim() === "") {
+                                document.getElementById("temptErr").textContent = "Please enter temperature";
+                                isValid = false;
+                            } else {
+                                document.getElementById("temptErr").textContent = "";
+                            }
+
+                            // Validate weight
+                            const weight = document.getElementById("weight").value;
+                            if (weight.trim() === "") {
+                                document.getElementById("weightErr").textContent = "Please enter weight";
+                                isValid = false;
+                            } else {
+                                document.getElementById("weightErr").textContent = "";
+                            }
+
+                            // Validate height
+                            const height = document.getElementById("height").value;
+                            if (height.trim() === "") {
+                                document.getElementById("heightErr").textContent = "Please enter height";
+                                isValid = false;
+                            } else {
+                                document.getElementById("heightErr").textContent = "";
+                            }
+
+                            // Validate HIV Test Mode checkboxes
+                            const testModeHIVab = document.getElementById("hivTestmodeHIVab").checked;
+                            const testModePcr = document.getElementById("hivTestmodePcr").checked;
+                            if (!testModeHIVab && !testModePcr) {
+                                document.getElementById("testmodeErr").textContent = "Please select at least one HIV test mode";
+                                isValid = false;
+                            } else {
+                                document.getElementById("testmodeErr").textContent = "";
+                            }
+
+                            // Validate hivDiagnosisDate
+                            const hivDiagnosisDate = document.getElementById("hivDiagnosisDate").value;
+                            if (hivDiagnosisDate === "") {
+                                document.getElementById("hivDiagnosisDateErr").textContent = "Please select the date of HIV diagnosis";
+                                isValid = false;
+                            } else {
+                                document.getElementById("hivDiagnosisDateErr").textContent = "";
+                            }
+
+                            // Validate Viral Load
+                            const viralLoad = document.getElementById("viralLoad").value;
+                            if (viralLoad.trim() === "") {
+                                document.getElementById("viralLoadErr").textContent = "Please enter viral load";
+                                isValid = false;
+                            } else {
+                                document.getElementById("viralLoadErr").textContent = "";
+                            }
+
+                            // Validate CD4
+                            const cd4Count = document.getElementById("cd4Count").value;
+                            if (cd4Count.trim() === "") {
+                                document.getElementById("cd4CountErr").textContent = "Please enter CD4 count";
+                                isValid = false;
+                            } else {
+                                document.getElementById("cd4CountErr").textContent = "";
+                            }
+
+                            // Validate Resistance
+                            const resistance = document.getElementById("resistance").value;
+                            if (resistance.trim() === "") {
+                                document.getElementById("resistancetestErr").textContent = "Please enter resistance testing results";
+                                isValid = false;
+                            } else {
+                                document.getElementById("resistancetestErr").textContent = "";
+                            }
+
+
+            return isValid;
+        }
+
+        // Function to clear error messages
+        function clearError(inputId, errorId) {
+            document.getElementById(errorId).innerText = "";
+        }
+    </script>
 </body>
-</html>                    
+</html>

@@ -3,103 +3,325 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="Description" content="Dynamic web development"> 
-    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dynamic web development"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> HPMS </title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
+    
     <header>
-        <nav>
-            <div class="logo">HPMS</div>
-            <div class="nav-link">
-                <a href="../index.html">Home</a>
-                <a href="patient_registration.html">Patient Registration</a>
-                <a href="clinical_visit.html">Clinical Visit</a>
-                <a href="art_prescription.html">ART Prescription</a>
-                <a href="contact_tracing.html">Contact Tracing </a>
-                <a href="educational_outreach.html">Education/Outreach</a>
-            </div>
+        <div class="logo">HPMS</div>
+        <nav class="nav-link">
+            <a href="../index.html">Home</a>
+            <a href="patient_registration.html">Patient Registration</a>
+            <a href="clinical_visit.html">Clinical Visit</a>
+            <a href="art_prescription.html">ART Prescription</a>
+            <a href="contact_tracing.html">Contact Tracing </a>
+            <a href="educational_outreach.html">Education/Outreach</a>
         </nav>
+
     </header>
+   
 
     <main>
         <section class="section-container">
-            
             <nav class="side-nav">
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="patient_registration.html">Patient Registration</a></li>
-                    <a href="clinical_visit.html">Clinical Visit</a>
-                    <a href="art_prescription.html">ART Prescription</a>
-                    <a href="contact_tracing.html">Contact Tracing </a>
-                    <a href="edu_outreach.html">Education/Outreach</a>
+                    <li><a href="clinical_visit.html">Clinical Visit</a></li>
+                    <li><a href="art_prescription.html">ART Prescription</a></li>
+                    <li><a href="contact_tracing.html">Contact Tracing </a></li>
+                    <li><a href="edu_outreach.html">Education/Outreach</a></li>
                 </ul>
             </nav>
 
             <article class="form-container">
                 <h2> Admin Registration Form </h2>
-                <form action="login.html" method="post" autocomplete="off" target="_self">
+                <form action= "login.html" method= "post" autocomplete= "off" target="_self" onsubmit = "return validateReg();">
+
                     <div class="form-group">
                         <label for="firstname">First Name:</label>
-                        <input type="text" id="firstname" name="firstname" required>
+                        <input type="text" id="firstname" name="firstname" oninput="return validateFname()"><br>
+                        <span id="fnameError"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="lastname">Last Name:</label>
-                        <input type="text" id="lastname" name="lastname" required>
+                        <input type="text" id="lastname" name="lastname" oninput="return validateLname()"><br>
+                        <span id="lnameError"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="emailadd">Email Address:</label>
-                        <input type="email" id="emailadd" name="emailadd" required>
+                        <input type="email" id="emailadd" name="emailadd" oninput="return validateemail()"><br>
+                        <span id="emailError"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="mobilenumber">Mobile Number:</label>
-                        <input type="tel" id="mobilenumber" name="mobilenumber" required>
-                    </div class="form-group">
-
-                    <div class="form-group">
-                        <label for="username">User Name:</label>
-                        <input type="email" id="username" name="username" required>
+                        <input type="tel" id="mobilenumber" name="mobilenumber" oninput="return validatemobile()"><br>
+                        <span id="mobileError"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="admin-password">Password:</label>
-                        <input type="password" id="admin-password" name="admin-password" required>
+                        <label for="adminusername">UserName:</label>
+                        <input type="text" id="adminusername" name="adminusername" onblur="return validatepassusername()"><br>
+                        <span id="adminusernameError"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="c-password">Confirm Password:</label>
-                        <input type="password" id="c-password" name="c-password" required>
+                        <label for="adminpassword">Password:</label>
+                        <input type="password" id="adminpassword" name="adminpassword" oninput="return validatepassword()">
+                        <input type="checkbox" onclick="togglePasswordVisibility()"> Show Password
+                        <span id="adminpassError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cpassword">Confirm Password:</label>
+                        <input type="password" id="cpassword" name="cpassword" oninput="return validatepassconfirmation()"><br>
+                        <span id="cpasswordError"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="role">Role:</label>
-                        <select name="role" id="role" required>
-                            <option value="select one" selected>Select One</option>
+                        <select name="role" id="role">
+                            <option value="select one" >Select One</option>
                             <option value="admin">Admin</option>
                             <option value="admin supervisor">Admin supervisor</option>
-                        </select>  
+                        </select>  <br>
+                        <span id="roleError"></span>
                     </div>
 
                     <div class="form-group" >
-                        <label for="Organsation">Organisation:</label>
-                        <input type="text" id="Organsation" name="Organsation" required>
+                        <label for="organisation">Organisation:</label>
+                        <input type="text" id="organisation" name="organisation"><br>
+                        <span id="orgError"></span>
                     </div>
 
                     <div class="button-container">
-                        <button type="submit" value="save & exit">Register</button>
+                        <button type="submit" name="submit" value="save">Register</button>
                     </div>
+                   
                 </form>
+                <script>
+
+                    // form validation
+                    function validateReg(){
+                        let isValid = true;
+
+                        let adminFname = document.getElementById('firstname').value;
+                        let adminLname = document.getElementById('lastname').value;
+                        let adminMail = document.getElementById('emailadd').value;
+                        let adminMobile = document.getElementById('mobilenumber').value;
+                        let adminUsername = document.getElementById('adminusername').value;
+                        let adminPassword = document.getElementById('adminpassword').value;
+                        let adminCpassword = document.getElementById('cpassword').value;
+                        let adminRole = document.getElementById('role').value;
+                        let adminOrganisation = document.getElementById('organisation').value;
+
+                        if(!adminFname){
+                            document.getElementById('fnameError').innerHTML ="Please enter Admin first Name";
+                            document.getElementById('firstname').focus();
+                            isValid=false;
+                        } else{
+                            document.getElementById('fnameError').innerHTML= "";
+                        }
+
+                        if(!adminLname){
+                            document.getElementById('lnameError').innerHTML ="Please enter Admin last Name";
+                            document.getElementById('lastname').focus();
+                            isValid=false;
+                        } else{
+                            document.getElementById('lnameError').innerHTML= "";
+                        }
+
+                        
+                        if(!adminMail){
+                            document.getElementById('emailError').innerHTML ="Please enter Admin email address";
+                            document.getElementById('emailadd').focus();
+                            isValid=false;
+                        } else{
+                            document.getElementById('emailError').innerHTML= "";
+                        }
+
+                        if(!adminMobile){
+                            document.getElementById('mobileError').innerHTML ="Please enter Admin mobile number";
+                            document.getElementById('mobilenumber').focus();
+                            isValid=false;
+                        } else{
+                            document.getElementById('mobileError').innerHTML= "";
+                        }
+
+                        if(!adminUsername){
+
+                            document.getElementById('adminusernameError').innerHTML ="Please enter Admin username";
+                            document.getElementById('adminusername').focus();
+                            isValid=false;
+                        } else{
+                            document.getElementById('adminusernameError').innerHTML= "";
+                        }
+
+                        if(!adminPassword){
+                            document.getElementById('adminpassError').innerHTML ="Please enter Admin password";
+                            document.getElementById('adminpassword').focus();
+                            isValid=false;
+                        } else{
+                            document.getElementById('adminpassError').innerHTML= "";
+                        }
+
+                        if (!adminCpassword) {
+                            document.getElementById('cpasswordError').innerHTML = "Please confirm Admin password";
+                            document.getElementById('cpassword').focus();
+                            isValid = false;
+                        } else {
+                            document.getElementById('cpasswordError').innerHTML = "";
+                        }
+
+                        if (adminPassword && adminCpassword && adminPassword !== adminCpassword) {
+                            document.getElementById('cpasswordError').innerHTML = "Passwords do not match";
+                            document.getElementById('cpassword').focus();
+                            isValid = false;
+                        }
+
+                        if (adminRole === 'select one') {
+                            document.getElementById('roleError').innerHTML = "Please select Admin role";
+                            document.getElementById('role').focus();
+                            isValid = false;
+                        } else {
+                            document.getElementById('roleError').innerHTML = "";
+                        }
+
+                        if(!adminOrganisation){
+                            document.getElementById('orgError').innerHTML ="Please enter organisation";
+                            document.getElementById('organisation').focus();
+                            isValid=false;
+                        } else{
+                            document.getElementById('orgError').innerHTML= "";
+                            
+                        }
+                        return isValid;    
+                    }
+                    
+                    function validateFname(){
+                        let adminFname = document.getElementById('firstname').value;
+                        let namepattern = /^[A-Za-z/s]*$/;
+
+                        if(!adminFname.match(namepattern)){
+                            document.getElementById('fnameError').innerHTML ="Invalid name pattern(letters and whitespace only)";
+                            document.getElementById('firstname').focus();
+                            return false;
+                        } else{
+                            document.getElementById('fnameError').innerHTML = "";
+                        }
+                        return true
+                    }
+
+                    function validateLname(){
+                        let adminLname =  document.getElementById('lastname').value;;
+                        let namepattern = /^[A-Za-z/s]*$/;
+
+                        if(!adminLname.match(namepattern)){
+                            document.getElementById('lnameError').innerHTML ="Invalid name pattern(letters and whitespace only)";
+                            document.getElementById('lastname').focus();
+                            return false;
+                        } else{
+                            document.getElementById('lnameError').innerHTML = "";
+                        }
+                        return true
+                    }
+
+                    function validatemobile() {
+                        let adminMobile = document.getElementById('mobilenumber').value;
+                        let mobilepattern = /^\+[1-9]\d{1,14}$/;
+                        if (!adminMobile.match(mobilepattern)) {
+                            document.getElementById('mobileError').innerHTML = "Invalid mobile number (10 to 14digits required)";
+                            return false;
+                        } else {
+                            document.getElementById('mobileError').innerHTML = "";
+                            return true;
+                        }
+                    }
+
+                    function validateemail() {
+                        let adminMail = document.getElementById('emailadd').value;
+                        let emailpattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                        if (!adminMail.match(emailpattern)) {
+                            document.getElementById('emailError').innerHTML = "Invalid email address";
+                            return false;
+                        } else {
+                            document.getElementById('emailError').innerHTML = "";
+                            return true;
+                        }
+                    }
+
+                    function togglePasswordVisibility() {
+                        let passwordField = document.getElementById('adminpassword');
+                        if (passwordField.type === "password") {
+                            passwordField.type = "text";
+                        } else {
+                            passwordField.type = "password";
+                        }
+                    }
+                    
+                    function validatepassword() {
+                        let adminPassword = document.getElementById('adminpassword').value;
+                        let passwordpattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+                        if (!adminPassword.match(passwordpattern)) {
+                            document.getElementById('adminpassError').innerHTML = "Password must be at least 8 characters long and contain at least one letter, one number, and one special character";
+                            document.getElementById('adminpassword').focus();
+                            return false;
+                        } else {
+                            document.getElementById('adminpassError').innerHTML = "";
+                            return true;
+                        }
+                    } 
+
+                    function validatepassconfirmation() {
+                        let adminPassword = document.getElementById('adminpassword').value;
+                        let adminCpassword = document.getElementById('cpassword').value;
+                        if (adminPassword !== adminCpassword) {
+                            document.getElementById('cpasswordError').innerHTML = "Passwords do not match";
+                            document.getElementById('cpassword').focus();
+                            return false;
+                        } else {
+                            document.getElementById('cpasswordError').innerHTML = "";
+                            return true;
+                        }
+                    }
+
+                    function validatepassusername() {
+                        let adminUsername = document.getElementById('adminusername').value;
+                        let usernamePattern = /^[a-zA-Z0-9]{3,15}$/
+                        
+                        if (!adminUsername.match(usernamePattern)) {
+                            document.getElementById('adminusernameError').innerHTML = "Invalid format(letters and numbers only)";
+                            document.getElementById('adminusername').focus();
+                            return false;
+                        } else {
+                            document.getElementById('adminusernameError').innerHTML = "";
+                            return true;
+                        }
+
+                        
+                    }
+
+                    
+
+                </script>
             </article>
             
             
         </section>
         <footer class="footer">
                 <p>&copy; 2024 HIV Prevalence Management System</p>
-            </footer>
+        </footer>
+
+       
     </main>
+    
 </body>
 </html>

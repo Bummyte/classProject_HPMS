@@ -8,6 +8,9 @@ body{
     font-family: Arial, sans-serif;
     background-image: linear-gradient(-45deg, rgb(86, 100, 244), lightblue);
     background-color: #eee;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
 /* style for all h1 and h2*/
@@ -23,45 +26,37 @@ h1, h2{
 
 /* header styles*/
 header{
-    max-width: 100%;
-    height: auto;
-    background-color: rgb(22, 137, 231);
-    color: black;
-    padding: 10px 0;
-    display: flex;
-    border-radius: 5px;
+   background-color: rgb(22, 137, 231);
+   color: black;
+   padding: 1rem;
  }
 
  .logo{
-    font-size: 30px;
+    font-size: 2.0rem;
     font-weight: bold;
     text-shadow: 1px 2px 2px black;
     color: red;
     margin: 4px 10px;
-    border-radius: 5px;
 }
 
 /*header nav styles*/
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    max-width: 1200px;
-    margin: o auto;
-    padding: 0 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
  }
 
  .nav-link{
- display: flex;
- margin: 0 100px;
- flex-wrap: wrap;
- }
+   display: flex;
+   gap: 10px;
+  }
 
  .nav-link a{
     text-decoration: none;
     padding: 5px 15px;
     color: #fff;
-    flex-wrap: wrap;
+    
  }
  .nav-link a:hover{
     background-color: red;
@@ -69,7 +64,7 @@ nav {
 
 /* indexpage styles*/
 .page-heading{
-   max-width: 100%;
+    max-width: 100%;
     border: 2px solid;
     width: 50%;
     margin: 2rem auto;
@@ -79,6 +74,7 @@ nav {
     border-radius: 5px;
     border: none;
     box-shadow: 2px 3px 4px gray;
+
  }
  
 
@@ -108,34 +104,28 @@ nav {
 }
 
 .info-container{
-   margin: 0 auto;
-   width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-    box-sizing: border-box;
-    gap: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;   
  }
  
 
  .sub-container{
-    border-radius: 5px;
-    background-color: #eee;
-    box-shadow: 2px 2px 4px black;
-    margin: 10px;
-    padding: 20px;
-    width: 30%;
-    flex: 1 1 30%;
-    box-sizing: border-box;
+
+   flex: 1 1 300px;
+   padding: 20px;
+   border-radius: 5px;
+   background-color: #eee;
+   box-shadow: 2px 2px 4px black;
+ 
  }
 
  .sub-container .counter{
    box-sizing: border-box;
    width: 100%;
- }
+}
 
- .sub-container ul,
+.sub-container ul,
 .sub-container ol {
   padding-left: 20px;
   margin: 0;
@@ -162,8 +152,6 @@ nav {
     background-color: rgb(193, 179, 179);
     box-shadow: 2px 2px 3px 4px black;
     border-radius: 5px;
-    
-
 }
 
 .login-section h2{
@@ -177,7 +165,7 @@ nav {
 
 .form-group{
   max-width: auto;
-  height: 100%;
+  
   padding: 10px;
  }
 
@@ -185,23 +173,33 @@ nav {
    margin-bottom: 10px;
    padding: 10px;
  }
- /*label styles*/
- .form-container{
-   max-width: 100%;
+
+/*label styles*/
+.form-container{
+   max-width: 90%; 
+   min-width: 300px;
    justify-content: center;
    margin: 30px auto;
    flex-wrap: wrap;
    overflow: auto;
    flex: 3 200px;
+   display: flex;
+   flex-direction: column;
+   padding: 20px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   /*background-color: #f9f9f9;*/
+   border-radius: 10px;    
 }
 
 .form-container .form-group label{
    display: block;
    padding: 5px 0;
-    font-size: 1.2rem;
-    font-weight: bold;
- }
- /* input styles*/
+   font-size: 1.2rem;
+   font-weight: bold;
+}
+
+
+/* input styles*/
  .form-container .form-group input[type="text"],
  .form-container .form-group input[type="password"],
  .form-container .form-group input[type="number"],
@@ -211,52 +209,66 @@ nav {
  
  {
     max-width: 100%;
-    width: 600px;
+    width: 100%;
     height: 40px;
     border: 2px solid;
     border-radius: 5px;
     padding: 5px 10px;
     margin: 5px 0;
     background-color: #eee;
- }
+}
 
- .form-container .form-group select{
-    width: 600px;
+.form-container .form-group select{
+   max-width: 100%;
+    width: 100%;
     height: 40px;
     border: 2px solid;
     border-radius: 5px;
     padding: 5px 10px;
     margin: 5px 0;
     background-color: #eee;
+}
 
- }
+.form-container .form-group textarea {
+   height: 60px;
+   width: 100%;
+   border: 2px solid;
+}
 
- .form-container .form-group textarea {
-   width: 600px;
+.form-container .form-group input[type="submit"],
+.button-container button {
     height: 40px;
-    border: 2px solid;
     border-radius: 5px;
-    padding: 5px 10px;
-    margin: 5px 0;
-    background-color: #eee;
- }
-
- .form-group input[type="submit"]{
-    margin: 5px auto;
-    margin-left: 40%;
-    height: 30px;
-    border: 2px solid black;
-    border-radius: 5px;
-    width: 15%;
-    color: #eee;
+    width: 100px;
+    color: #fff;
     background-color: blue;
     cursor: pointer;
     border: none;
     font-weight: bold;
- }
+    display: block;
+    margin: 20px auto;
+}
 
- .form-group input[type="submit"] :hover {
+ 
+.form-group input[type="submit"] :hover {
     background-color: aqua;
+}
+
+@media (max-width: 768px) {
+   .form-container {
+       padding: 15px;
+   }
+
+   .form-container .form-group input[type="text"],
+   .form-container .form-group input[type="password"],
+   .form-container .form-group input[type="number"],
+   .form-container .form-group input[type="date"],
+   .form-container .form-group input[type="tel"],
+   .form-container .form-group input[type="email"],
+   .form-container .form-group select,
+   .form-container .form-group textarea {
+       max-width: 100%;
+   }
 }
 
 .section-container{
@@ -300,7 +312,7 @@ nav {
 
  .side-nav a:hover{
     background-color: blue;
- }
+}
 
 
 
@@ -333,7 +345,7 @@ tr{
    background-color: rgb(185, 200, 205);
    margin-top: 10px;
    border-radius: 2rem;
-   max-width: auto;
+   max-width: 100%;
 }
 
 .table-container input[type='text'],
@@ -402,3 +414,35 @@ font-size: 24px;}
 .table-container th{
    background-color: gray;
 }
+
+span{color: red;}
+
+.divstyle{overflow-x: auto;}
+
+@media (max-width: 768px) {
+   /* Styles for tablets */
+   .nav-link {
+      flex-direction: column;
+   }
+
+   .page-heading, .info-container {
+      flex-direction: column;
+   }
+}
+
+@media (max-width: 480px) {
+   /* Styles for mobile devices */
+   .nav-link a {
+      padding: 10px;
+      font-size: 14px;
+   }
+
+   .page-heading h1 {
+      font-size: 24px;
+   }
+
+   .sub-container {
+      padding: 10px;
+   }
+}
+

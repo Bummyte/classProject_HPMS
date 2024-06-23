@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="Description" content="Dynamic web development"> 
-    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dynamic web development"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> HPMS </title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -48,48 +48,58 @@
                             <legend>Patient Contact Information</legend>
                          <div>
                             <label for="patient_id">Patient ID:</label>
-                            <input type="text" id="patient_id" name="patient_id" required>
+                            <input type="text" id="patient_id" name="patient_id" required onblur="validatePatientId()"><br>
+                            <span id="patientIdError"></span>
                          </div>
                          <div>
                             <label for="contact_full_name"> Contact Full Name:</label>
-                            <input type="text" id="index_full_name" name="index_full_name" required>
+                            <input type="text" id="contact_full_name" name="contact_full_name" required onblur="validateContactFullName()"><br>
+                            <span id="contactFullNameError"></span>
                          </div>
                          <div>
                             <label for="contact_date_of_birth">Date of Birth:</label>
-                            <input type="date" id="contact_date_of_birth" name="contact_date_of_birth" required>
+                            <input type="date" id="contact_date_of_birth" name="contact_date_of_birth" required onblur="validateContactDateOfBirth()"><br>
+                            <span id="contactDateOfBirthError"></span>
                          </div>
                          <div>
                           <label for="contact_gender"> Contact Gender:</label>
-                            <select id="contact_gender" name="contact_gender" required>
+                            <select id="contact_gender" name="contact_gender" required onblur="validateContactGender()">
                                     <option value="">Select</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                     <option value="other">Other</option>
-                            </select>  
+                            </select>  <br>
+                            <span id="contactGenderError"></span>
                          </div>
                          <div>
                             <label for="contact_phone">Contact Phone Number:</label>
-                            <input type="tel" id="contact_phone" name="contact_phone" required>
+                            <input type="tel" id="contact_phone" name="contact_phone" required onblur="validateContactPhone()"><br>
+                            <span id="contactPhoneError"></span>
                          </div>
                          <div>
                             <label for="contact_email">Contact Email:</label>
-                            <input type="email" id="contact_email" name="contact_email">  
+                            <input type="email" id="contact_email" name="contact_email" onblur="validateContactEmail()">  <br>
+                            <span id="contactEmailError"></span>
                          </div>
                          <div>
                             <label for="contact_address">Contact Address:</label>
-                            <textarea id="contact_address" name="contact_address" rows="3" required></textarea> 
+                            <textarea id="contact_address" name="contact_address" rows="3" required onblur="validateContactAddress()"></textarea> <br>
+                            <span id="contactAddressError"></span>
                          </div>
                          <div>
                             <label for="contact_relation">Relation to Patient:</label>
-                            <input type="text" id="contact_relation" name="contact_relation" required>  
+                            <input type="text" id="contact_relation" name="contact_relation" required onblur="validateContactRelation()"><br>
+                            <span id="contactRelationError"></span>
                          </div>
                          <div>
                             <label for="last_contact_date">Date of Last Contact with Patient:</label>
-                            <input type="date" id="last_contact_date" name="last_contact_date" required>
+                            <input type="date" id="last_contact_date" name="last_contact_date" required onblur="validateLastContactDate()"><br>
+                            <span id="lastContactDateError"></span>
                          </div>
                          <div>
                             <label for="contact_notes">Additional Notes:</label>
-                            <textarea id="contact_notes" name="contact_notes" rows="3"></textarea> 
+                            <textarea id="contact_notes" name="contact_notes" rows="3" onblur="validateContactNotes()"></textarea> <br>
+                            <span id="contactNotesError"></span>
                          </div>
                         </fieldset>
 
@@ -97,70 +107,275 @@
                             <legend>Risk Assessment</legend>
                             <div>
                                 <label for="contact_exposure_type">Type of Exposure:</label>
-                                <select id="contact_exposure_type" name="contact_exposure_type" required>
+                                <select id="contact_exposure_type" name="contact_exposure_type" required onblur="validateContactExposureType()"><br>
                                 <option value="">Select</option>
                                 <option value="sexual">Sexual</option>
                                 <option value="household">Household</option>
                                 <option value="occupational">Occupational</option>
                                 <option value="other">Other</option>
                                 </select>
+                                <span id="contactExposureTypeError"></span>
                             </div>
                             
                             <div>
                                 <label for="contact_symptoms">Does the contact have any symptoms? (Specify):</label>
-                                <textarea id="contact_symptoms" name="contact_symptoms" rows="3"></textarea>
-            
+                                <textarea id="contact_symptoms" name="contact_symptoms" rows="3" onblur="validateContactSymptoms()"></textarea><br>
+                                <span id="contactSymptomsError"></span>
                             </div>
                             <div>
                                 <label for="contact_risk_level">Risk Level:</label>
-                                <select id="contact_risk_level" name="contact_risk_level" required>
+                                <select id="contact_risk_level" name="contact_risk_level" required onblur="validateContactRiskLevel()"><br>
                                 <option value="">Select</option>
                                 <option value="high">High</option>
                                 <option value="medium">Medium</option>
                                 <option value="low">Low</option>
                                 </select>
+                                <span id="contactRiskLevelError"></span>
                             </div>
                         
                             <div>
                                 <label for="contact_testing_date">Date of HIV Testing:</label>
-                                <input type="date" id="contact_testing_date" name="contact_testing_date">
+                                <input type="date" id="contact_testing_date" name="contact_testing_date" onblur="validateContactTestingDate()"><br>
+                                <span id="contactTestingDateError"></span>
                             </div>
                             <div>
                                 <label for="contact_testing_results">HIV Testing Results:</label>
-                                <select id="contact_testing_results" name="contact_testing_results">
+                                <select id="contact_testing_results" name="contact_testing_results" onblur="validateContactTestingResults()"><br>
                                 <option value="">Select</option>
                                 <option value="positive">Positive</option>
                                 <option value="negative">Negative</option>
                                 <option value="unknown">Unknown</option>
                                 </select>  
+                                <span id="contactTestingResultsError"></span>
                             </div>
                             <div>
                             <label for="contact_sexual_intercourse">Has the contact had sexual intercourse with the patient?</label>
-                            <select id="contact_sexual_intercourse" name="contact_sexual_intercourse" required>
+                            <select id="contact_sexual_intercourse" name="contact_sexual_intercourse" required onblur="validateContactSexualIntercourse()"><br>
                             <option value="">Select</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                             </select>
+                            <span id="contactSexualIntercourseError"></span>
                             </div>
                             <div>
                                 <label for="contact_blood_transfusion">Has the contact received a blood transfusion?</label>
-                                <select id="contact_blood_transfusion" name="contact_blood_transfusion" required>
+                                <select id="contact_blood_transfusion" name="contact_blood_transfusion" required onblur="validateContactBloodTransfusion()"><br>
                                 <option value="">Select</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                                 </select>
+                                <span id="contactBloodTransfusionError"></span>
                             </div>
 
                         </fieldset>
 
+                        <div class="button-container">
+                            <button type="button" value="Save & Next"> Save & Next Contact </button>
+                            <button type="submit" name="submit">Submit</button>
+                        </div>
                     </div>
                     </form>
-                    <div class="button-container">
-                        <button type="submit" value="Save & Next"> <a href="contact_tracing.html">Save & Next Contact</a></button>
-                        <button type="submit" name="submit">Submit</button>
-                    </div>
+                   
                 </section>
                 
+                <script>
+                    function validateContactTracingForm() {
+                        let isValid = true;
+                        if (!validatePatientId()) isValid = false;
+                        if (!validateContactFullName()) isValid = false;
+                        if (!validateContactDateOfBirth()) isValid = false;
+                        if (!validateContactGender()) isValid = false;
+                        if (!validateContactPhone()) isValid = false;
+                        if (!validateContactEmail()) isValid = false;
+                        if (!validateContactAddress()) isValid = false;
+                        if (!validateContactRelation()) isValid = false;
+                        if (!validateLastContactDate()) isValid = false;
+                        if (!validateContactExposureType()) isValid = false;
+                        if (!validateContactRiskLevel()) isValid = false;
+                        if (!validateContactSexualIntercourse()) isValid = false;
+                        if (!validateContactBloodTransfusion()) isValid = false;
+                        return isValid;
+                    }
+            
+                    function validatePatientId() {
+                        let patientId = document.getElementById('patient_id').value;
+                        let patientidpattern = /^[a-zA-Z0-9\s]*$/;
+                        if (!patientId.match(patientidpattern)) {
+                            document.getElementById('patientIdError').innerHTML = "Patient ID is required, Ltters and no combination";
+                            return false;
+                        } else {
+                            document.getElementById('patientIdError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateContactFullName() {
+                        let contactFullName = document.getElementById('contact_full_name').value;
+                        if (!contactFullName) {
+                            document.getElementById('contactFullNameError').innerHTML = "Contact full name is required";
+                            return false;
+                        } else {
+                            document.getElementById('contactFullNameError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateContactDateOfBirth() {
+                        let contactDateOfBirth = document.getElementById('contact_date_of_birth').value;
+                        if (!contactDateOfBirth) {
+                            document.getElementById('contactDateOfBirthError').innerHTML = "Date of birth is required";
+                            return false;
+                        } else {
+                            document.getElementById('contactDateOfBirthError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateContactGender() {
+                        let contactGender = document.getElementById('contact_gender').value;
+                        if (!contactGender) {
+                            document.getElementById('contactGenderError').innerHTML = "Contact gender is required";
+                            return false;
+                        } else {
+                            document.getElementById('contactGenderError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateContactPhone() {
+                        let contactPhone = document.getElementById('contact_phone').value;
+                        let phonePattern = /^[0-9]{10}$/;
+                        if (!contactPhone.match(phonePattern)) {
+                            document.getElementById('contactPhoneError').innerHTML = "Please enter a valid 10-digit phone number";
+                            return false;
+                        } else {
+                            document.getElementById('contactPhoneError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateContactEmail() {
+                        let contactEmail = document.getElementById('contact_email').value;
+                        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                        if (contactEmail && !contactEmail.match(emailPattern)) {
+                            document.getElementById('contactEmailError').innerHTML = "Please enter a valid email address";
+                            return false;
+                        } else {
+                            document.getElementById('contactEmailError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateContactAddress() {
+                        let contactAddress = document.getElementById('contact_address').value;
+                        if (!contactAddress) {
+                            document.getElementById('contactAddressError').innerHTML = "Contact address is required";
+                            return false;
+                        } else {
+                            document.getElementById('contactAddressError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateContactRelation() {
+                        let contactRelation = document.getElementById('contact_relation').value;
+                        if (!contactRelation) {
+                            document.getElementById('contactRelationError').innerHTML = "Relation to patient is required";
+                            return false;
+                        } else {
+                            document.getElementById('contactRelationError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateLastContactDate() {
+                        let lastContactDate = document.getElementById('last_contact_date').value;
+                        if (!lastContactDate) {
+                            document.getElementById('lastContactDateError').innerHTML = "Date of last contact is required";
+                            return false;
+                        } else {
+                            document.getElementById('lastContactDateError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateContactExposureType() {
+                        let contactExposureType = document.getElementById('contact_exposure_type').value;
+                        if (!contactExposureType) {
+                            document.getElementById('contactExposureTypeError').innerHTML = "Type of exposure is required";
+                            return false;
+                        } else {
+                            document.getElementById('contactExposureTypeError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateContactSymptoms() {
+                        let contactSymptoms = document.getElementById('contact_symptoms').value;
+                        if (contactSymptoms.length > 500) {
+                            document.getElementById('contactSymptomsError').innerHTML = "Symptoms description is too long";
+                            return false;
+                        } else {
+                            document.getElementById('contactSymptomsError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateContactRiskLevel() {
+                        let contactRiskLevel = document.getElementById('contact_risk_level').value;
+                        if (!contactRiskLevel) {
+                            document.getElementById('contactRiskLevelError').innerHTML = "Risk level is required";
+                            return false;
+                        } else {
+                            document.getElementById('contactRiskLevelError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateContactTestingDate() {
+                        let contactTestingDate = document.getElementById('contact_testing_date').value;
+                        if (contactTestingDate && new Date(contactTestingDate) > new Date()) {
+                            document.getElementById('contactTestingDateError').innerHTML = "Testing date cannot be in the future";
+                            return false;
+                        } else {
+                            document.getElementById('contactTestingDateError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateContactTestingResults() {
+                        let contactTestingResults = document.getElementById('contact_testing_results').value;
+                        if (contactTestingResults === '') {
+                            document.getElementById('contactTestingResultsError').innerHTML = "Please select testing results";
+                            return false;
+                        } else {
+                            document.getElementById('contactTestingResultsError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateContactSexualIntercourse() {
+                        let contactSexualIntercourse = document.getElementById('contact_sexual_intercourse').value;
+                        if (!contactSexualIntercourse) {
+                            document.getElementById('contactSexualIntercourseError').innerHTML = "Please select an option";
+                            return false;
+                        } else {
+                            document.getElementById('contactSexualIntercourseError').innerHTML = "";
+                            return true;
+                        }
+                    }
+            
+                    function validateContactBloodTransfusion() {
+                        let contactBloodTransfusion = document.getElementById('contact_blood_transfusion').value;
+                        if (!contactBloodTransfusion) {
+                            document.getElementById('contactBloodTransfusionError').innerHTML = "Please select an option";
+                            return false;
+                        } else {
+                            document.getElementById('contactBloodTransfusionError').innerHTML = "";
+                            return true;
+                        }
+                    }
+                </script>
             </article>
         </section>
         <footer class="footer">

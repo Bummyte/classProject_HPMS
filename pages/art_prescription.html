@@ -3,48 +3,48 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="Description" content="Dynamic web development"> 
-    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
-    <title> HPMS </title>
+    <meta name="description" content="Dynamic web development"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HPMS</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
     <header>
-        <nav>
-            <div class="logo">HPMS</div>
-            <div class="nav-link">
-                <a href="../index.html">Home</a>
-                <a href="patient_registration.html">Patient Registration</a>
-                <a href="clinical_visit.html">Clinical Visit</a>
-                <a href="art_prescription.html">ART Prescription</a>
-                <a href="contact_tracing.html">Contact Tracing </a>
-                <a href="edu_outreach.html">Education Outreach</a>
-            </div>
+        <div class="logo">HPMS</div>
+        <nav class="nav-link">
+            <a href="../index.html">Home</a>
+            <a href="patient_registration.html">Patient Registration</a>
+            <a href="clinical_visit.html">Clinical Visit</a>
+            <a href="art_prescription.html">ART Prescription</a>
+            <a href="contact_tracing.html">Contact Tracing </a>
+            <a href="edu_outreach.html">Education Outreach</a>
+            <a style="float: left;" href="art_prescription.html">Register New Patient</a>
         </nav>
     </header>
 
     <main>
         <section class="section-container">
             <div>
-            <nav class="side-nav">
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="patient_registration.html">Patient Registration</a></li>
-                    <a href="clinical_visit.html">Clinical Visit</a>
-                    <a href="art_prescription.html">ART Prescription</a>
-                    <a href="contact_tracing.html">Contact Tracing </a>
-                    <a href="educational_outreach.html">Education/Outreach</a>
-                </ul>
-            </nav>
+                <nav class="side-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="patient_registration.html">Patient Registration</a></li>
+                        <li><a href="clinical_visit.html">Clinical Visit</a></li>
+                        <li><a href="art_prescription.html">ART Prescription</a></li>
+                        <li><a href="contact_tracing.html">Contact Tracing </a></li>
+                        <li><a href="edu_outreach.html">Education/Outreach</a></li>
+                    </ul>
+                </nav>
             </div>
 
             <article class="form-container">
                 <div class="table-container">
-                    <h2>Antiretroviral Therapy(ART) For Patient </h2>
-                    <form action="#" method="post" autocomplete="off" target="_self" >
+                    <h2>Antiretroviral Therapy (ART) For Patient</h2>
+                    <form action="contact_tracing.html" method="post" novalidate autocomplete="off" target="_self" onsubmit="return validateartprescription();">
                         <div style="overflow-x: auto;">
                             <table>
-                                <thead>                        
+                                <thead>
                                     <tr>
                                         <th colspan="10">Treatment Information</th>
                                     </tr>
@@ -52,31 +52,37 @@
                                 <tr>
                                     <td colspan="5">
                                         <label for="patient_id">Patient ID:</label>
-                                        <input type="text" id="patient_id" name="patient_id" required>
+                                        <input type="text" id="patient_id" name="patient_id" required oninput="clearError('patient_id', 'patidErr'); validatepatientid();"><br>
+                                        <span id="patidErr"></span>
                                     </td>
                                     <td colspan="5">
                                         <label for="prescription_date">Prescription Date:</label>
-                                        <input type="date" id="prescription_date" name="prescription_date" required>
+                                        <input type="date" id="prescription_date" name="prescription_date" required oninput="clearError('prescription_date', 'prescriptiondateErr')"><br>
+                                        <span id="prescriptiondateErr"></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="3">
-                                        <label for="current_art_regimen">Current ART Regimen:</label>
-                                        <textarea id="current_art_regimen" name="current_art_regimen" rows="3" required></textarea>
+                                        <label for="currentart_regimen">Current ART Regimen:</label>
+                                        <textarea id="currentart_regimen" name="currentart_regimen" rows="3" required oninput="clearError('currentart_regimen', 'currentartErr')"></textarea><br>
+                                        <span id="currentartErr"></span>
                                     </td>
                                     <td colspan="4">
                                         <label for="dosage">Dosage:</label>
-                                        <input type="text" id="dosage" name="dosage" required>
+                                        <input type="text" id="dosage" name="dosage" required oninput="clearError('dosage', 'dosareErr')"><br>
+                                        <span id="dosareErr"></span>
                                     </td>
                                     <td colspan="3">
                                         <label for="frequency">Frequency:</label>
-                                        <input type="text" id="frequency" name="frequency" required>
+                                        <input type="text" id="frequency" name="frequency" required oninput="clearError('frequency', 'artfrequencyErr')"><br>
+                                        <span id="artfrequencyErr"></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="4">
-                                        <label for="start_date">ART Start Date:</label>
-                                        <input type="date" id="start_date" name="start_date" required>
+                                        <label for="artstart_date">ART Start Date:</label>
+                                        <input type="date" id="artstart_date" name="artstart_date" required oninput="clearError('artstart_date', 'artstartdateErr')"><br>
+                                        <span id="artstartdateErr"></span>
                                     </td>
                                     <td colspan="3">
                                         <label for="duration">Duration (e.g., 30 days):</label>
@@ -91,6 +97,7 @@
                                     <td colspan="4">
                                         <label for="adherence">Adherence to Treatment:</label>
                                         <select id="adherence" name="adherence" required>
+                                            <option value="select one">Select Option</option>
                                             <option value="excellent">Excellent</option>
                                             <option value="good">Good</option>
                                             <option value="fair">Fair</option>
@@ -101,7 +108,7 @@
                                         <label for="side_effects">ART Side Effects:</label>
                                         <textarea id="side_effects" name="side_effects" rows="3"></textarea>
                                     </td>
-                                    <td colspan="3"> 
+                                    <td colspan="3">
                                         <label for="drug_interactions">Drug Interactions:</label>
                                         <textarea id="drug_interactions" name="drug_interactions" rows="3"></textarea>
                                     </td>
@@ -119,7 +126,7 @@
                                 <tr>
                                     <td colspan="5">
                                         <label for="other_medications">Other Medications:</label>
-                                        <input type="text"  id="other_medications" name="other_medications">
+                                        <input type="text" id="other_medications" name="other_medications">
                                     </td>
                                     <td colspan="5">
                                         <label for="treatment_notes">Additional Treatment Notes:</label>
@@ -132,11 +139,13 @@
                                 <tr>
                                     <td colspan="6">
                                         <label for="follow_up_date">Next Follow-Up Date:</label>
-                                        <input type="date" id="follow_up_date" name="follow_up_date" required>
+                                        <input type="date" id="follow_up_date" name="follow_up_date" required oninput="clearError('follow_up_date', 'followupdateErr')"><br>
+                                        <span id="followupdateErr"></span>
                                     </td>
                                     <td colspan="4">
                                         <label for="monitoring_plan">Monitoring Plan:</label>
-                                        <textarea id="monitoring_plan" name="monitoring_plan" rows="3" required></textarea>
+                                        <textarea id="monitoring_plan" name="monitoring_plan" rows="3" required oninput="clearError('monitoring_plan', 'monitoringplaErr')"></textarea><br>
+                                        <span id="monitoringplaErr"></span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -145,35 +154,172 @@
                                 <tr>
                                     <td colspan="5">
                                         <label for="prescriber_name">Prescriber Name:</label>
-                                        <input type="text" id="prescriber_name" name="prescriber_name" required>
+                                        <input type="text" id="prescriber_name" name="prescriber_name" required oninput="clearError('prescriber_name', 'precribernameErr')"><br>
+                                        <span id="precribernameErr"></span>
                                     </td>
                                     <td colspan="3">
                                         <label for="prescriber_contact">Prescriber Contact Information:</label>
-                                        <textarea id="prescriber_contact" name="prescriber_contact" rows="2" required></textarea>
+                                        <textarea id="prescriber_contact" name="prescriber_contact" rows="2" required oninput="clearError('prescriber_contact', 'prescontantErr')"></textarea><br>
+                                        <span id="prescontantErr"></span>
                                     </td>
                                     <td colspan="3">
                                         <label for="prescriber_license">Prescriber License Number:</label>
                                         <input type="text" id="prescriber_license" name="prescriber_license" required>
                                     </td>
                                 </tr>
-                            </table>       
+                            </table>
                         </div>
 
+                        <div class="button-container">
+                            <button type="submit" name="submit">Submit</button>
+                            <button type="button" value="Save"><a href="art_prescription.html">Save & Next Patient</a></button>
+                        </div>
                     </form>
-
-                    <div class="button-container">
-                        <button type="submit" name="submit">Submit</button>
-                    </div>
                 </div>
-                
             </article>
-            
-           
+
+            <script>
+                // ART validation form
+                try {
+                    function validateartprescription() {
+                        let isValid = true;
+
+                        const patient_id = document.getElementById('patient_id').value;
+                        const prescription_date = document.getElementById('prescription_date').value;
+                        const currentart_regimen = document.getElementById('currentart_regimen').value;
+                        const dosage = document.getElementById('dosage').value;
+                        const frequency = document.getElementById('frequency').value;
+                        const artstart_date = document.getElementById('artstart_date').value;
+                        const duration = document.getElementById('duration').value;
+                        const refills = document.getElementById('refills').value;
+                        const adherence = document.getElementById('adherence').value;
+                        const side_effects = document.getElementById('side_effects').value;
+                        const drug_interactions = document.getElementById('drug_interactions').value;
+                        const previousart_regimen = document.getElementById('previous_art_regimen').value;
+                        const reason = document.getElementById('reason_for_change').value;
+                        const other_medications = document.getElementById('other_medications').value;
+                        const treatment_notes = document.getElementById('treatment_notes').value;
+                        const follow_up_date = document.getElementById('follow_up_date').value;
+                        const monitoring_plan = document.getElementById('monitoring_plan').value;
+                        const prescriber_name = document.getElementById('prescriber_name').value;
+                        const prescriber_contact = document.getElementById('prescriber_contact').value;
+                        const prescriber_license = document.getElementById('prescriber_license').value;
+
+                        if (!patient_id) {
+                            document.getElementById('patidErr').innerHTML = 'Kindly enter patient id number';
+                            document.getElementById('patient_id').focus();
+                            isValid = false;
+                        } else {
+                            document.getElementById('patidErr').innerHTML = '';
+                        }
+
+                        if (!prescription_date) {
+                            document.getElementById('prescriptiondateErr').innerHTML = 'Kindly enter prescription date';
+                            document.getElementById('prescription_date').focus();
+                            isValid = false;
+                        } else {
+                            document.getElementById('prescriptiondateErr').innerHTML = '';
+                        }
+
+                        if (!currentart_regimen) {
+                            document.getElementById('currentartErr').innerHTML = 'Kindly enter current Art-Regimen';
+                            document.getElementById('currentart_regimen').focus();
+                            isValid = false;
+                        } else {
+                            document.getElementById('currentartErr').innerHTML = '';
+                        }
+
+                        if (!dosage) {
+                            document.getElementById('dosareErr').innerHTML = 'Kindly enter Art Dosage';
+                            document.getElementById('dosage').focus();
+                            isValid = false;
+                        } else {
+                            document.getElementById('dosareErr').innerHTML = '';
+                        }
+
+                        if (!frequency) {
+                            document.getElementById('artfrequencyErr').innerHTML = 'Kindly enter dosage frequency';
+                            document.getElementById('frequency').focus();
+                            isValid = false;
+                        } else {
+                            document.getElementById('artfrequencyErr').innerHTML = '';
+                        }
+
+                        if (!artstart_date) {
+                            document.getElementById('artstartdateErr').innerHTML = 'Kindly indicate Art start date';
+                            document.getElementById('artstart_date').focus();
+                            isValid = false;
+                        } else {
+                            document.getElementById('artstartdateErr').innerHTML = '';
+                        }
+
+                        if (!follow_up_date) {
+                            document.getElementById('followupdateErr').innerHTML = 'Kindly indicate follow-up dates';
+                            document.getElementById('follow_up_date').focus();
+                            isValid = false;
+                        } else {
+                            document.getElementById('followupdateErr').innerHTML = '';
+                        }
+
+                        if (!monitoring_plan) {
+                            document.getElementById('monitoringplaErr').innerHTML = 'Kindly enter monitoring plan for patient';
+                            document.getElementById('monitoring_plan').focus();
+                            isValid = false;
+                        } else {
+                            document.getElementById('monitoringplaErr').innerHTML = '';
+                        }
+
+                        if (!prescriber_name) {
+                            document.getElementById('precribernameErr').innerHTML = 'Kindly enter name of physician';
+                            document.getElementById('prescriber_name').focus();
+                            isValid = false;
+                        } else {
+                            document.getElementById('precribernameErr').innerHTML = '';
+                        }
+
+                        if (!prescriber_contact) {
+                            document.getElementById('prescontantErr').innerHTML = 'Kindly enter physician contact information';
+                            document.getElementById('prescriber_contact').focus();
+                            isValid = false;
+                        } else {
+                            document.getElementById('prescontantErr').innerHTML = '';
+                        }
+
+                        return isValid;
+                    }
+
+                    function validatepatientid() {
+                        const patientidpattern = /^[a-zA-Z0-9\s]*$/;
+                        const patient_id = document.getElementById('patient_id').value;
+
+                        if (!patient_id.match(patientidpattern)) {
+                            document.getElementById('patidErr').innerHTML = 'Kindly enter a valid id number';
+                            document.getElementById('patient_id').focus();
+                            isValid = false;
+                        } else {
+                            document.getElementById('patidErr').innerHTML = '';
+                        }
+                    }
+
+                    function clearError(fieldId, errorId) {
+                        const field = document.getElementById(fieldId);
+                        const errorSpan = document.getElementById(errorId);
+
+                        if (field.value.trim() !== '') {
+                            errorSpan.innerHTML = '';
+                        }
+                    }
+
+                } catch (err) {
+                    window.alert(err.message);
+                }
+            </script>
         </section>
+
         <footer class="footer">
             <p>&copy; 2024 HIV Prevalence Management System</p>
         </footer>
-
     </main>
 </body>
+
 </html>
