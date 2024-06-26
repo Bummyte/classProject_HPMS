@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HPMS</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script defer src="../scripts/hpms.js"></script>
 </head>
 <body>
     <header>
@@ -51,12 +52,12 @@
                                     <tr>
                                         <td colspan="5">
                                             <label for="patientId">Patient ID:</label>
-                                            <input type="text" id="patientId" name="patientId" oninput="clearError('patientId', 'patientIdErr')"><br>
+                                            <input type="text" id="patientId" name="patientId" onfocus="clearError('patientIdErr')"><br>
                                             <span id="patientIdErr"></span>                                            
                                         </td>
                                         <td colspan="5">
                                             <label for="previousTests">Previous HIV Tests (dates and results):</label>
-                                            <textarea id="previousTests" name="previousTests" rows="3" oninput="clearError('previousTests', 'ptestErr')"></textarea><br>
+                                            <textarea id="previousTests" name="previousTests" rows="3" onfocus="clearError('ptestErr')"></textarea><br>
                                             <span id="ptestErr"></span> 
                                         </td>
 
@@ -64,24 +65,24 @@
                                     <tr>
                                         <td colspan="6">
                                             <label for="opportunisticInfections">History of Opportunistic Infections:</label>
-                                            <textarea id="opportunisticInfections" name="opportunisticInfections" oninput="clearError('opportunisticInfections', 'OpportunisticErr')"></textarea><br>
+                                            <textarea id="opportunisticInfections" name="opportunisticInfections" onfocus="clearError('OpportunisticErr')"></textarea><br>
                                             <span id="OpportunisticErr"></span>
                                         </td>
                                         <td colspan="4">
                                             <label for="hivRelatedConditions">History of HIV-related Conditions:</label>
-                                            <textarea id="hivRelatedConditions" name="hivRelatedConditions" rows="3" oninput="clearError('hivRelatedConditions', 'relatedcondErr')"></textarea><br>
+                                            <textarea id="hivRelatedConditions" name="hivRelatedConditions" rows="3" onfocus="clearError('relatedcondErr')"></textarea><br>
                                             <span id="relatedcondErr"></span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="5">
                                             <label for="previousMedications">Previous and Current Medications:</label>
-                                            <textarea id="previousMedications" name="previousMedications" rows="3" oninput="clearError('previousMedications', 'previousMedicationsErr')"></textarea><br>
+                                            <textarea id="previousMedications" name="previousMedications" rows="3" onfocus="clearError('previousMedicationsErr')"></textarea><br>
                                             <span id="previousMedicationsErr"></span>
                                         </td>
                                         <td colspan="5">
                                             <label for="allergies">Allergies:</label>
-                                            <textarea id="allergies" name="allergies" rows="3" oninput="clearError('allergies', 'allergiesErr')"></textarea><br>
+                                            <textarea id="allergies" name="allergies" rows="3" onfocus="clearError('allergiesErr')"></textarea><br>
                                             <span id="allergiesErr"></span>
                                         </td>                                       
                                     </tr>    
@@ -92,46 +93,46 @@
                                     <tr>
                                         <td colspan="4">
                                         <label for="visitDate">Date of Visit:</label>
-                                        <input type="date" id="visitDate" name="visitDate"  oninput="clearError('visitDate', 'visitDateErr')"><br>
+                                        <input type="date" id="visitDate" name="visitDate"  onfocus="clearError('visitDateErr')"><br>
                                         <span id="visitDateErr"></span>
                                         </td>
                                         <td colspan="3">
                                         <label for="reasonForvisit">Reason for Visit:</label>
-                                        <textarea id="reasonForvisit" name="reasonForvisit" rows="3"  oninput="clearError('reasonForvisit', 'reasonForvisitErr')"></textarea><br>
+                                        <textarea id="reasonForvisit" name="reasonForvisit" rows="3"  onfocus="clearError('reasonForvisitErr')"></textarea><br>
                                         <span id="reasonForvisitErr"></span>
                                         </td>
                                         <td colspan="3">
                                         <label for="currentSymptoms">Current Symptoms:</label>
-                                        <textarea id="currentSymptoms" name="currentSymptoms" rows="3" oninput="clearError('currentSymptoms', 'currentSymptomsErr')"></textarea><br>
+                                        <textarea id="currentSymptoms" name="currentSymptoms" rows="3" onfocus="clearError('currentSymptomsErr')"></textarea><br>
                                         <span id="currentSymptomsErr"></span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="3">
                                         <label for="bloodPressure">Blood Pressure:</label>
-                                        <input type="text" id="bloodPressure" name="bloodPressure" oninput="clearError('bloodPressure', 'bloodPressureErr')"><br>
+                                        <input type="text" id="bloodPressure" name="bloodPressure" onfocus="clearError('bloodPressureErr')"><br>
                                         <span id="bloodPressureErr"></span>
                                         </td>
                                         <td colspan="4">
                                         <label for="heartRate">Heart Rate:</label>
-                                        <input type="text" id="heartRate" name="heartRate" oninput="clearError('heartRate', 'heartRateErr')"><br>
+                                        <input type="text" id="heartRate" name="heartRate" onfocus="clearError('heartRateErr')"><br>
                                         <span id="heartRateErr"></span>
                                         </td>
                                         <td colspan="3">
                                         <label for="temperature">Temperature:</label>
-                                        <input type="text" id="temperature" name="temperature" oninput="clearError('temperature', 'temptErr')"><br>
+                                        <input type="text" id="temperature" name="temperature" onfocus="clearError('temptErr')"><br>
                                         <span id="temptErr"></span>
                                         </td>                                    
                                     </tr>
                                     <tr>
                                         <td colspan="6">
                                         <label for="weight">Weight:</label>
-                                        <input type="text" id="weight" name="weight" oninput="clearError('weight', 'weightErr')"><br>
+                                        <input type="text" id="weight" name="weight" onfocus="clearError('weightErr')"><br>
                                         <span id="weightErr"></span>
                                         </td>
                                         <td colspan="4">
                                         <label for="height">Height:</label>
-                                        <input type="text" id="height" name="height" oninput="clearError('height', 'heightErr')"><br>
+                                        <input type="text" id="height" name="height" onfocus="clearError( 'heightErr')"><br>
                                         <span id="heightErr"></span>
                                         </td>
                                     </tr>
@@ -141,7 +142,7 @@
                                     <tr>
                                         <td colspan="5">
                                         <label for="hivDiagnosisDate">Date of HIV Diagnosis:</label>
-                                        <input type="date" id="hivDiagnosisDate" name="hivDiagnosisDate"  oninput="clearError('hivDiagnosisDate', 'hivDiagnosisDateErr')"><br>
+                                        <input type="date" id="hivDiagnosisDate" name="hivDiagnosisDate"  onfocus="clearError('hivDiagnosisDateErr')"><br>
                                         <span id="hivDiagnosisDateErr"></span>
                                         </td>
                                         <td colspan="5">
@@ -156,17 +157,17 @@
                                     <tr>
                                         <td colspan="4">
                                         <label for="viralLoad">Viral Load (copies/mL):</label>
-                                        <input type="number" id="viralLoad" name="viralLoad" oninput="clearError('viralLoad', 'viralLoadErr')"><br>
+                                        <input type="number" id="viralLoad" name="viralLoad" onfocus="clearError('viralLoadErr')"><br>
                                         <span id="viralLoadErr"></span>
                                         </td>
                                         <td colspan="3">
                                         <label for="cd4Count">CD4 Count (cells/mm³):</label>
-                                        <input type="number" id="cd4Count" name="cd4Count" oninput="clearError('cd4Count', 'cd4CountErr')"><br>
+                                        <input type="number" id="cd4Count" name="cd4Count" onfocus="clearError('cd4CountErr')"><br>
                                         <span id="cd4CountErr"></span>
                                         </td>
                                         <td colspan="3">
                                         <label for="resistance">Resistance Testing Results:</label>
-                                        <textarea id="resistance" name="resistance" rows="3" oninput="clearError('resistance', 'resistancetestErr')"></textarea><br>
+                                        <textarea id="resistance" name="resistance" rows="3" onfocus="clearError('resistancetestErr')"></textarea><br>
                                         <span id="resistancetestErr"></span>
                                         </td>
                                     </tr>
@@ -187,194 +188,6 @@
         </footer>
     </main>
 
-    <script>
-        function validateClinicVisit() {
-            var isValid = true;
-
-            // Validate Patient ID
-            const patientId = document.getElementById('patientId').value;
-            if (patientId.trim() === "") {
-                document.getElementById("patientIdErr").textContent = "Please enter Patient ID";
-                document.getElementById('patientId').focus();
-                isValid = false;
-            } else {
-                document.getElementById("patientIdErr").textContent = "";
-            }
-
-            // Validate previousTests
-            const previousTests = document.getElementById('previousTests').value;
-            if (previousTests.trim() === "") {
-                document.getElementById("ptestErr").textContent = "Please enter Previuos Tests";
-                document.getElementById('previousTests').focus();
-                isValid = false;
-            } else {
-                document.getElementById("ptestErr").textContent = "";
-            }
-
-            // Validate History of Opportunistic Infections
-            const opportunisticInfections = document.getElementById('opportunisticInfections').value;
-            if (opportunisticInfections.trim() === "") {
-                document.getElementById('OpportunisticErr').innerText = "History of Opportunistic Infections is ";
-                document.getElementById('opportunisticInfections').focus();
-                isValid = false;
-            } else {
-                document.getElementById("OpportunisticErr").textContent = "";
-            }
-
-            // Validate History of HIV-related Conditions
-            const hivRelatedConditions = document.getElementById('hivRelatedConditions').value;
-            if (hivRelatedConditions.trim() === "") {
-                document.getElementById('relatedcondErr').innerText = "History of HIV-related Conditions is ";
-                document.getElementById('hivRelatedConditions').focus();
-                isValid = false;
-            } else {
-                document.getElementById("relatedcondErr").textContent = "";
-            }
-
-            // Validate Medications
-            const previousMedications = document.getElementById("previousMedications").value;
-            if (previousMedications.trim() === "") {
-                document.getElementById("previousMedicationsErr").textContent = "Please enter previous and current medications";
-                document.getElementById('previousMedications').focus();
-                isValid = false;
-            } else {
-                document.getElementById("previousMedicationsErr").textContent = "";
-            }
-
-            // Validate allergies
-            const allergies = document.getElementById("allergies").value;
-            if (allergies.trim() === "") {
-                document.getElementById("allergiesErr").textContent = "Please enter allergies";
-                isValid = false;
-            } else {
-                document.getElementById("allergiesErr").textContent = "";
-            }
-            // Validate visitDate
-            const visitDate = document.getElementById("visitDate").value;
-            if (visitDate === "") {
-                document.getElementById("visitDateErr").textContent = "Please select a visit date";
-                isValid = false;
-            } else {
-                document.getElementById("visitDateErr").textContent = "";                    
-            }
-                            
-            // Validate reasonForvisit
-            const reasonForvisit = document.getElementById("reasonForvisit").value;
-            if (reasonForvisit.trim() === "") {
-                document.getElementById("reasonForvisitErr").textContent = "Please enter the reason for visit";
-                isValid = false;
-            } else {
-                document.getElementById("reasonForvisitErr").textContent = "";
-            }
-
-                            // Validate Current Symptoms
-                            const currentSymptoms = document.getElementById("currentSymptoms").value;
-                            if (currentSymptoms.trim() === "") {
-                                document.getElementById("currentSymptomsErr").textContent = "Please enter current symptoms";
-                                isValid = false;
-                            } else {
-                                document.getElementById("currentSymptomsErr").textContent = "";
-                            }
-
-                            // Validate Blood Pressure
-                            const bloodPressure = document.getElementById("bloodPressure").value;
-                            if (bloodPressure.trim() === "") {
-                                document.getElementById("bloodPressureErr").textContent = "Please enter blood pressure";
-                                isValid = false;
-                            } else {
-                                document.getElementById("bloodPressureErr").textContent = "";
-                            }
-
-                            // Validate Heart Rate
-                            const heartRate = document.getElementById("heartRate").value;
-                            if (heartRate.trim() === "") {
-                                document.getElementById("heartRateErr").textContent = "Please enter heart rate";
-                                isValid = false;
-                            } else {
-                                document.getElementById("heartRateErr").textContent = "";
-                            }
-
-                            // Validate temperature
-                            const temperature = document.getElementById("temperature").value;
-                            if (temperature.trim() === "") {
-                                document.getElementById("temptErr").textContent = "Please enter temperature";
-                                isValid = false;
-                            } else {
-                                document.getElementById("temptErr").textContent = "";
-                            }
-
-                            // Validate weight
-                            const weight = document.getElementById("weight").value;
-                            if (weight.trim() === "") {
-                                document.getElementById("weightErr").textContent = "Please enter weight";
-                                isValid = false;
-                            } else {
-                                document.getElementById("weightErr").textContent = "";
-                            }
-
-                            // Validate height
-                            const height = document.getElementById("height").value;
-                            if (height.trim() === "") {
-                                document.getElementById("heightErr").textContent = "Please enter height";
-                                isValid = false;
-                            } else {
-                                document.getElementById("heightErr").textContent = "";
-                            }
-
-                            // Validate HIV Test Mode checkboxes
-                            const testModeHIVab = document.getElementById("hivTestmodeHIVab").checked;
-                            const testModePcr = document.getElementById("hivTestmodePcr").checked;
-                            if (!testModeHIVab && !testModePcr) {
-                                document.getElementById("testmodeErr").textContent = "Please select at least one HIV test mode";
-                                isValid = false;
-                            } else {
-                                document.getElementById("testmodeErr").textContent = "";
-                            }
-
-                            // Validate hivDiagnosisDate
-                            const hivDiagnosisDate = document.getElementById("hivDiagnosisDate").value;
-                            if (hivDiagnosisDate === "") {
-                                document.getElementById("hivDiagnosisDateErr").textContent = "Please select the date of HIV diagnosis";
-                                isValid = false;
-                            } else {
-                                document.getElementById("hivDiagnosisDateErr").textContent = "";
-                            }
-
-                            // Validate Viral Load
-                            const viralLoad = document.getElementById("viralLoad").value;
-                            if (viralLoad.trim() === "") {
-                                document.getElementById("viralLoadErr").textContent = "Please enter viral load";
-                                isValid = false;
-                            } else {
-                                document.getElementById("viralLoadErr").textContent = "";
-                            }
-
-                            // Validate CD4
-                            const cd4Count = document.getElementById("cd4Count").value;
-                            if (cd4Count.trim() === "") {
-                                document.getElementById("cd4CountErr").textContent = "Please enter CD4 count";
-                                isValid = false;
-                            } else {
-                                document.getElementById("cd4CountErr").textContent = "";
-                            }
-
-                            // Validate Resistance
-                            const resistance = document.getElementById("resistance").value;
-                            if (resistance.trim() === "") {
-                                document.getElementById("resistancetestErr").textContent = "Please enter resistance testing results";
-                                isValid = false;
-                            } else {
-                                document.getElementById("resistancetestErr").textContent = "";
-                            }
-
-
-            return isValid;
-        }
-
-        // Function to clear error messages
-        function clearError(inputId, errorId) {
-            document.getElementById(errorId).innerText = "";
-        }
-    </script>
+   
 </body>
 </html>
